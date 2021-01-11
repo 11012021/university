@@ -45,7 +45,7 @@ function cardTemplate(firstname, lastname, work, imgURL) {
 }
 
 // draw teachers in main page
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i <= 10; i++) {
   cardTemplate( i+10, i+100, 'Teacher', 'https://cutt.ly/sjcRGGs');
   teachersBlock.insertAdjacentHTML('afterbegin', card)
 }
@@ -59,7 +59,7 @@ DELETEteacher.forEach(item => {
   item.addEventListener('click', (e) => {
     let teacherName = e.target.previousElementSibling.previousElementSibling.textContent;
     let teachersBlockItem = e.target.parentElement.parentElement.parentElement.parentElement;
-    
+
     let ask = confirm('Вы действительно хотите удалить учителя?')
     if (ask) {
       teachersBlockItem.remove()
