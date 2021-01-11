@@ -30,7 +30,7 @@ function cardTemplate(firstname, lastname, work, imgURL) {
 <div class="card-body">
   <div class="d-flex flex-column align-items-center text-center">
     <img src="${imgURL}"
-      alt="Admin" class="rounded-circle" width="150">
+      alt="..." class="rounded-circle" width="150">
     <div class="mt-3">
       <h4>${firstname} ${lastname}</h4>
       <p class="text-secondary mb-3">${work}</p>
@@ -44,7 +44,7 @@ function cardTemplate(firstname, lastname, work, imgURL) {
 `
 }
 
-// draw teachers in main page
+// on load draw teachers in main page
 for (let i = 0; i <= 10; i++) {
   cardTemplate(i + 10, i + 100, 'Teacher', 'https://cutt.ly/sjcRGGs');
   teachersBlock.insertAdjacentHTML('beforeend', card)
@@ -57,7 +57,8 @@ let CREATEteacher = document.querySelector('#CREATEteacher')
 
 // CREATE Teacher
 CREATEteacher.addEventListener('click', () => {
-  cardTemplate(prompt('Имя', 'qwerty'), prompt('Фамилия', '123'), 'Teacher', 'https://cutt.ly/sjcRGGs');
+  cardTemplate(prompt('Имя', 'qwerty'), prompt('Фамилия', '123'),
+    'Teacher', prompt('Фото', 'https://cutt.ly/sjcRGGs'));
   teachersBlock.insertAdjacentHTML('beforeend', card)
   teachersBlock.lastElementChild.classList.add('mb-5')
 })
