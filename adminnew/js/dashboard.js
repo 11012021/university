@@ -34,9 +34,9 @@ function cardTemplate(firstname, lastname, work, imgURL) {
     <div class="mt-3">
       <h4>${firstname} ${lastname}</h4>
       <p class="text-secondary mb-3">${work}</p>
-      <button class="btn btn-outline-danger" id="DELETEteacher">Удалить</button>
-      <button class="btn btn-outline-primary">Отзывы</button>
-      <button class="btn btn-outline-success">Редактировать</button>
+      <button class="btn btn-danger" id="DELETEteacher">Удалить</button>
+      <button class="btn btn-primary m-2">Отзывы</button>
+      <button class="btn btn-success">Редактировать</button>
     </div>
   </div>
 </div>
@@ -46,13 +46,21 @@ function cardTemplate(firstname, lastname, work, imgURL) {
 
 // draw teachers in main page
 for (let i = 0; i <= 10; i++) {
-  cardTemplate( i+10, i+100, 'Teacher', 'https://cutt.ly/sjcRGGs');
-  teachersBlock.insertAdjacentHTML('afterbegin', card)
+  cardTemplate(i + 10, i + 100, 'Teacher', 'https://cutt.ly/sjcRGGs');
+  teachersBlock.insertAdjacentHTML('beforeend', card)
+  teachersBlock.lastElementChild.classList.add('mb-5')
 }
-teachersBlock.lastElementChild.classList.add('mb-5')
 
 // CRUD Teachers
 let DELETEteacher = document.querySelectorAll('#DELETEteacher')
+let CREATEteacher = document.querySelector('#CREATEteacher')
+
+// CREATE Teacher
+CREATEteacher.addEventListener('click', () => {
+  cardTemplate(prompt('Имя', 'qwerty'), prompt('Фамилия', '123'), 'Teacher', 'https://cutt.ly/sjcRGGs');
+  teachersBlock.insertAdjacentHTML('beforeend', card)
+  teachersBlock.lastElementChild.classList.add('mb-5')
+})
 
 // DELETE Teacher
 DELETEteacher.forEach(item => {
