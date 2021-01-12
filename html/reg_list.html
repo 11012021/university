@@ -7,149 +7,90 @@
     <link rel="stylesheet" href="/css/reg_list.css">
     <link rel="shortcut icon" href="/img/mortarboard.png">
     <title>RegList</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
 <body>
 
     <header>
-        <div class="nav">
-            <nav class="navbar navbar-expand-lg navbar-light p-0 w-100">
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#schedule">Расписания</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#news">События</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Результаты</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#teachers">Преподаватели</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-light p-0 w-100">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#schedule">Расписания</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#news">События</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#teachers">Преподаватели</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
-
-
-    <div class="schedule_div" id="schedule">
-        <div class="text-center download_div">
-
-            <table>
-                <thead>
-                    <th>1-ый курс</th>
-                    <th>2-ой курс</th>
-                    <th>3-ий курс</th>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td><a download="download" href="/files/Алекс_Бэнкс,_Ева_Порселло_React.pdf">
-                                <button class="btn btn-primary">Скачать расписание</button></a></td>
-                        <td><a download="download" href="/files/Алекс_Бэнкс,_Ева_Порселло_React.pdf">
-                                <button class="btn btn-primary">Скачать расписание</button></a></td>
-                        <td><a download="download" href="/files/Алекс_Бэнкс,_Ева_Порселло_React.pdf">
-                                <button class="btn btn-primary">Скачать расписание</button></a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div style="margin: 40px;">
-                <button class="btn btn-danger">Возникли проблемы?</button>
+    <section id="schedule" class="mb-md-5 pb-md-5 m-4"></section>
+    <div class="container text-center schedule_div">
+        <div class="row justify-content-center bg-white p-md-5 p-4">
+            <div class="col-md-3 p-3">
+                <h3 class="mb-4">I курс</h3>
+                <a download="download" href="/files/Алекс_Бэнкс,_Ева_Порселло_React.pdf">
+                    <button class="btn btn-primary">Скачать расписание</button></a>
+            </div>
+            <div class="col-md-3 p-3">
+                <h3 class="mb-4">II курс</h3>
+                <a download="download" href="/files/Алекс_Бэнкс,_Ева_Порселло_React.pdf">
+                    <button class="btn btn-primary">Скачать расписание</button></a>
+            </div>
+            <div class="col-md-3 p-3">
+                <h3 class="mb-4">III курс</h3>
+                <a download="download" href="/files/Алекс_Бэнкс,_Ева_Порселло_React.pdf">
+                    <button class="btn btn-primary">Скачать расписание</button></a>
+            </div>
+            <div class="mt-4">
+                <button class="btn btn-danger p-md-2">Возникли проблемы?</button>
             </div>
         </div>
     </div>
 
-
-
-
-    <div class="news_div pt-5" id="news">
-
-        <div class="main_txt ">
-            <h3>События недели</h3>
-        </div>
-
-        <div class="container">
-            <div class="row justify-content-around no-gutters">
-
-                <div class="col-md-6 text-center bg-white p-3">
-
-                    <img class="w-100"
-                        src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iusto consequuntur obcaecati
-                        ipsam! Delectus maiores voluptas, dolore molestias sit aperiam beatae saepe laboriosam, eius
-                        animi dolor doloribus incidunt ratione. Maxime.</p>
-                </div>
-                <div class="col-md-6 text-center bg-white p-3">
-                    <img class="w-100"
-                        src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iusto consequuntur obcaecati
-                        ipsam! Delectus maiores voluptas, dolore molestias sit aperiam beatae saepe laboriosam, eius
-                        animi dolor doloribus incidunt ratione. Maxime.</p>
-                    <button class="btn btn-danger">Учавствовать</button>
-                </div>
-
-                <hr>
-
-
-                <div class="col-md-6 text-center bg-white">
-                    <img class="w-50"
-                        src="https://static10.tgstat.ru/channels/_0/88/888c5966c87ee48666060eb80c21e5e9.jpg">
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iusto consequuntur obcaecati
-                        ipsam! Delectus maiores voluptas, dolore molestias sit aperiam beatae saepe laboriosam, eius
-                        animi dolor doloribus incidunt ratione. Maxime.</p>
-                </div>
-                <div class="col-md-6 text-center  bg-white">
-                    <img class="w-50"
-                        src="https://static10.tgstat.ru/channels/_0/88/888c5966c87ee48666060eb80c21e5e9.jpg">
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iusto consequuntur obcaecati
-                        ipsam! Delectus maiores voluptas, dolore molestias sit aperiam beatae saepe laboriosam, eius
-                        animi dolor doloribus incidunt ratione. Maxime.</p>
-                </div>
-                <div class="col-md-6 text-center  bg-white">
-                    <img class="w-50"
-                        src="https://static10.tgstat.ru/channels/_0/88/888c5966c87ee48666060eb80c21e5e9.jpg">
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iusto consequuntur obcaecati
-                        ipsam! Delectus maiores voluptas, dolore molestias sit aperiam beatae saepe laboriosam, eius
-                        animi dolor doloribus incidunt ratione. Maxime.</p>
-                </div>
-                <div class="col-md-6 text-center  bg-white">
-                    <img class="w-50"
-                        src="https://static10.tgstat.ru/channels/_0/88/888c5966c87ee48666060eb80c21e5e9.jpg">
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iusto consequuntur obcaecati
-                        ipsam! Delectus maiores voluptas, dolore molestias sit aperiam beatae saepe laboriosam, eius
-                        animi dolor doloribus incidunt ratione. Maxime.</p>
+    <section id="news" class="mb-md-5 pb-md-5 m-4"></section>
+        <div class="news_div">
+            <div class="container">
+                <div class="row justify-content-around no-gutters">
+                    <div class="col-md-6 text-center bg-white p-3">
+                        <img class="w-100" src="https://bit.ly/38zM3Dy">
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iusto consequuntur obcaecati ipsam! Delectus maiores voluptas, dolore molestias sit aperiam beatae saepe laboriosam, eius animi dolor doloribus incidunt ratione Maxime.</p>
+                    </div>
+                    <div class="col-md-6 text-center bg-white p-3">
+                        <img class="w-100" src="https://bit.ly/38zM3Dy">
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iusto consequuntur obcaecati ipsam! Delectus maiores voluptas, dolore molestias sit aperiam beatae saepe laboriosam, eius animi dolor doloribus incidunt ratione. Maxime.</p>
+                    </div>
+                    <div class="col-md-6 text-center bg-white">
+                        <img class="w-100" src="https://bit.ly/38zM3Dy">
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iusto consequuntur obcaecati ipsam! Delectus maiores voluptas, dolore molestias sit aperiam beatae saepe laboriosam, eius animi dolor doloribus incidunt ratione. Maxime.</p>
+                    </div>
+                    <div class="col-md-6 text-center  bg-white">
+                        <img class="w-100" src="https://bit.ly/38zM3Dy">
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iusto consequuntur obcaecati ipsam! Delectus maiores voluptas, dolore molestias sit aperiam beatae saepe laboriosam, eius animi dolor doloribus incidunt ratione. Maxime.</p>
+                    </div>
+                    <div class="col-md-6 text-center  bg-white">
+                        <img class="w-100" src="https://bit.ly/38zM3Dy">
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iusto consequuntur obcaecati ipsam! Delectus maiores voluptas, dolore molestias sit aperiam beatae saepe laboriosam, eius animi dolor doloribus incidunt ratione. Maxime.</p>
+                    </div>
+                    <div class="col-md-6 text-center  bg-white">
+                        <img class="w-100" src="https://bit.ly/38zM3Dy">
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iusto consequuntur obcaecati ipsam! Delectus maiores voluptas, dolore molestias sit aperiam beatae saepe laboriosam, eius animi dolor doloribus incidunt ratione. Maxime.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-
-
-    <div class="teachers" id="teachers">
-
-        <div class="main_txt" id="news">
-            <h3>Учителя</h3>
-        </div>
-
+    <section id="teachers" class="mb-md-5 pb-md-5 m-4"></section>
+    <div class="teachers">
         <div class="container">
             <div class="row justify-content-around text-center" id="teachersBlock">
                 <!-- cards appends in reg_list.js -->
@@ -157,8 +98,9 @@
         </div>
     </div>
 
-
     <script src="/js/reg_list.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 </body>
-
 </html>

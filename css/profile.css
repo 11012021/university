@@ -30,6 +30,10 @@ body {
 
 .navbar-toggler {
   border: none !important;
+  box-shadow: none !important;
+  transition-property: all !important;
+  transition: all ease .5s !important;
+  outline: none !important;
 }
 
 .navbar-toggler-icon {
