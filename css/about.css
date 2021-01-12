@@ -19,6 +19,10 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.navbar h3{
+  display: none;
+}
+
 .navbar-brand img {
   width: 84px;
 }
@@ -94,7 +98,7 @@ footer a:hover {
 }
 
 /* media */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
   .chessImgs h1 {
     font-size: 18px !important;
     margin   : 30px 0px !important;
@@ -118,5 +122,13 @@ footer a:hover {
   .lorem2 p {
     width  : 100%;
     padding: 10px !important;
+  }
+
+  .navbar h3{
+    display: initial;
+  }
+  .navbar h3 a{
+    color: #fff;
+    text-decoration: none;
   }
 }

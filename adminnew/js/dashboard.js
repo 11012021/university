@@ -1,3 +1,8 @@
+// delete scroll to block after reload
+window.addEventListener('load', () => {
+  window.location.hash = '';
+})
+
 // Navigation buttons
 let newsBtn = document.getElementById('news_btn');
 let teachersBtn = document.getElementById('teachers_btn');

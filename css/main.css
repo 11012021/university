@@ -21,6 +21,10 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.navbar h3{
+  display: none;
+}
+
 .navbar-brand img {
   width: 84px;
 }
@@ -288,15 +292,21 @@ footer a:hover {
 }
 
 /* media */
-@media screen and (max-width: 768px){
+@media screen and (max-width: 991px){
   .awards{
     padding: 20px;
   } 
-
   .carousel-caption h5{
     font-size: 14px;
   }
   .carousel-caption p{
     font-size: 12px;
+  }
+  .navbar h3{
+    display: initial;
+  }
+  .navbar h3 a{
+    color: #fff;
+    text-decoration: none;
   }
 }
