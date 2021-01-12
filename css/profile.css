@@ -1,19 +1,19 @@
 html,
 body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
+  margin          : 0;
+  width           : 100%;
+  height          : 100%;
   background-color: #dae1f0 !important;
 }
 
 .nav {
   background-color: #102b72;
-  width: 100%;
+  width           : 100%;
 }
 
 .nav-item a {
   padding: 30px 20px !important;
-  color: rgb(230, 230, 230) !important;
+  color  : rgb(230, 230, 230) !important;
 }
 
 .nav-item a:hover {
@@ -21,7 +21,7 @@ body {
 }
 
 .navbar-brand img {
-  width: 200px;
+  width: 84px;
 }
 
 .navbar-nav button a {
@@ -29,19 +29,19 @@ body {
 }
 
 .navbar-toggler {
-  border: none !important;
-  box-shadow: none !important;
+  border             : none !important;
+  box-shadow         : none !important;
   transition-property: all !important;
-  transition: all ease .5s !important;
-  outline: none !important;
+  transition         : all ease .5s !important;
+  outline            : none !important;
 }
 
 .navbar-toggler-icon {
   background: url("/img/menu.png") center/cover !important;
 }
 
-li.align-self-center > a.nav-link {
-  margin-left: 50px;
+li.align-self-center>a.nav-link {
+  margin-left : 50px;
   margin-right: 50px;
 }
 
@@ -49,38 +49,40 @@ li.align-self-center > a.nav-link {
 .main-body {
   padding: 50px 0px;
 }
+
 .card {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 .card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
+  position        : relative;
+  display         : flex;
+  flex-direction  : column;
+  min-width       : 0;
+  word-wrap       : break-word;
   background-color: #fff;
-  background-clip: border-box;
-  border: 0 solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  background-clip : border-box;
+  border          : 0 solid rgba(0, 0, 0, 0.125);
+  border-radius   : 0.25rem;
 }
 
 .card-body {
-  flex: 1 1 auto;
+  flex      : 1 1 auto;
   min-height: 1px;
-  padding: 1rem;
+  padding   : 1rem;
 }
 
 .gutters-sm {
   margin-right: -8px;
-  margin-left: -8px;
+  margin-left : -8px;
 }
 
-.gutters-sm > .col,
-.gutters-sm > [class*="col-"] {
+.gutters-sm>.col,
+.gutters-sm>[class*="col-"] {
   padding-right: 8px;
-  padding-left: 8px;
+  padding-left : 8px;
 }
+
 .mb-3,
 .my-3 {
   margin-bottom: 1rem !important;
@@ -89,9 +91,11 @@ li.align-self-center > a.nav-link {
 .bg-gray-300 {
   background-color: #e2e8f0;
 }
+
 .h-100 {
   height: 100% !important;
 }
+
 .shadow-none {
   box-shadow: none !important;
 }
@@ -99,7 +103,7 @@ li.align-self-center > a.nav-link {
 /* Footer */
 footer {
   background-color: #1c1c1c;
-  color: #cbcbcb;
+  color           : #cbcbcb;
 }
 
 footer a,
@@ -108,6 +112,6 @@ footer a:hover {
 }
 
 .address p {
-  width: 30vh;
+  width    : 30vh;
   font-size: 2vh !important;
 }

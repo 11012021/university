@@ -1,18 +1,18 @@
 html,
 body {
   margin: 0;
-  width: 100%;
+  width : 100%;
   height: 100%;
 }
 
 .nav {
   background-color: #102b72;
-  width: 100%;
+  width           : 100%;
 }
 
 .nav-item a {
   padding: 30px 20px !important;
-  color: rgb(230, 230, 230) !important;
+  color  : rgb(230, 230, 230) !important;
 }
 
 .nav-item a:hover {
@@ -20,7 +20,7 @@ body {
 }
 
 .navbar-brand img {
-  width: 200px;
+  width: 84px;
 }
 
 .navbar-nav button a {
@@ -28,19 +28,19 @@ body {
 }
 
 .navbar-toggler {
-  border: none !important;
-  box-shadow: none !important;
+  border             : none !important;
+  box-shadow         : none !important;
   transition-property: all !important;
-  transition: all ease .5s !important;
-  outline: none !important;
+  transition         : all ease .5s !important;
+  outline            : none !important;
 }
 
 .navbar-toggler-icon {
   background: url("/img/menu.png") center/cover !important;
 }
 
-li.align-self-center > a.nav-link {
-  margin-left: 50px;
+li.align-self-center>a.nav-link {
+  margin-left : 50px;
   margin-right: 50px;
 }
 
@@ -50,10 +50,9 @@ li.align-self-center > a.nav-link {
 }
 
 .img1 {
-  padding: 50px 20px;
-  background: url("https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2019/07/Man-Silhouette.jpg")
-    center/cover;
-  color: #fff;
+  padding   : 50px 20px;
+  background: url("https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2019/07/Man-Silhouette.jpg") center/cover;
+  color     : #fff;
 }
 
 .img1 p,
@@ -62,12 +61,12 @@ li.align-self-center > a.nav-link {
 }
 
 .text {
-  width: 70%;
-  margin: 0 auto;
-  display: flex;
+  width           : 70%;
+  margin          : 0 auto;
+  display         : flex;
   background-color: #ddd;
-  border-radius: 10px;
-  padding: 40px;
+  border-radius   : 10px;
+  padding         : 40px;
 }
 
 .lorem2 p {
@@ -81,7 +80,7 @@ li.align-self-center > a.nav-link {
 /* footer */
 footer {
   background-color: #1c1c1c;
-  color: #cbcbcb;
+  color           : #cbcbcb;
 }
 
 footer a,
@@ -90,7 +89,7 @@ footer a:hover {
 }
 
 .address p {
-  width: 30vh;
+  width    : 30vh;
   font-size: 2vh !important;
 }
 
@@ -98,25 +97,26 @@ footer a:hover {
 @media screen and (max-width: 768px) {
   .chessImgs h1 {
     font-size: 18px !important;
-    margin: 30px 0px !important;
+    margin   : 30px 0px !important;
   }
+
   .lorem {
     padding: 20px !important;
   }
 
   .img1 {
-    padding: 20px;
+    padding  : 20px;
     font-size: 14px;
   }
 
   .text {
-    width: 100%;
+    width         : 100%;
     flex-direction: column;
-    padding: 10px;
+    padding       : 10px;
   }
 
   .lorem2 p {
-    width: 100%;
+    width  : 100%;
     padding: 10px !important;
   }
 }

@@ -13,6 +13,7 @@ window.addEventListener('load', () => {
     window.location.hash = '';
 })
 
+// creating teachersBlock
 let teachersBlock = document.querySelector('#teachersBlock')
 
 function cardTemplate(imgUrl, teacherLink) {
@@ -33,10 +34,3 @@ for (let i = 0; i < 8; i++) {
     cardTemplate('https://cutt.ly/OjcRP6y', '/html/profile.html')
     teachersBlock.insertAdjacentHTML('afterbegin', card)
 }
-
-
-// Easter EGG teachers
-let EasterEgg = teachersBlock.firstElementChild;
-EasterEgg.addEventListener('click', () => {
-    EasterEgg.firstElementChild.firstElementChild.setAttribute('src', 'https://bit.ly/3qeZ4IB')
-})
