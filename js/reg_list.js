@@ -10,7 +10,7 @@ navToggler.addEventListener('click', () => {
 
 // delete scroll to block after reload
 window.addEventListener('load', () => {
-   window.location.hash = '';
+    window.location.hash = '';
 })
 
 let teachersBlock = document.querySelector('#teachersBlock')
@@ -31,3 +31,10 @@ for (let i = 0; i < 10; i++) {
     cardTemplate('https://cutt.ly/OjcRP6y', '/html/profile.html')
     teachersBlock.insertAdjacentHTML('afterbegin', card)
 }
+
+
+// Easter EGG teachers
+let EasterEgg = teachersBlock.firstElementChild;
+EasterEgg.addEventListener('click', () => {
+    EasterEgg.firstElementChild.firstElementChild.setAttribute('src', 'https://bit.ly/3qeZ4IB')
+})

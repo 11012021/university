@@ -72,6 +72,11 @@ li.align-self-center>a.nav-link {
     margin-bottom   : 20px;
 }
 
+#teachersBlock > div:nth-child(1) > div > img{
+    transition-property: all !important;
+    transition: all ease .5s !important;
+}
+
 .teachers .col-sm-12>div {
     background-color       : #fff;
     border-top-left-radius : 5px;
