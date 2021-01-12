@@ -3,7 +3,7 @@ body {
     margin          : 0px;
     min-width       : 100%;
     min-height      : 100%;
-    background-color: #dae1f0 !important;
+    background-color: rgb(240, 240, 240) !important;
 }
 
 header {
@@ -12,6 +12,10 @@ header {
     position        : sticky;
     top             : 0px;
     z-index         : 999;
+}
+
+#brand {
+    display: none;
 }
 
 .nav-item a {
@@ -28,10 +32,10 @@ header {
 }
 
 .navbar-toggler {
-    border: none !important;
-    box-shadow: none !important;
+    border             : none !important;
+    box-shadow         : none !important;
     transition-property: all !important;
-    transition: all ease .5s !important;
+    transition         : all ease .5s !important;
 }
 
 .navbar-toggler-icon {
@@ -43,45 +47,83 @@ li.align-self-center>a.nav-link {
     margin-right: 50px;
 }
 
-.schedule_div>div {
-    border-radius: 20px;
-    box-shadow   : 0px 5px 10px #aaa;
+.schedule_div .col-md-3 {
+    background-color: #fff;
+    padding-top     : 30px !important;
+    margin          : 20px;
+    border-radius   : 20px;
+    box-shadow      : 0px 5px 10px #aaa;
 }
 
-.schedule_div>div button {
-    box-shadow: 0px 5px 10px #aaa;
+.schedule_div .col-md-3 button {
+    box-shadow                : 0px 5px 10px #aaa;
+    border-top-left-radius    : 0px;
+    border-top-right-radius   : 0px;
+    border-bottom-left-radius : 20px;
+    border-bottom-right-radius: 20px;
 }
 
-.download_div {
-    background-color: white;
-    padding         : 20px;
-    margin          : 40px 0px;
-    overflow        : scroll;
+/* NEWS */
+.news_div {
+    background-attachment: fixed;
+    background-image     : url('https://cdn.pixabay.com/photo/2016/03/26/13/12/pencils-1280558_960_720.jpg');
+    background-position  : center;
+    background-size      : cover;
+    background-repeat    : no-repeat;
+}
+
+.news_div h1 {
+    font-weight     : 400;
+    border-bottom   : 3px solid #000;
+    background-color: rgba(255, 255, 255, 0.25)
+}
+
+.date {
+    float: right;
 }
 
 /* teachers */
+.teachers {
+    background-attachment: fixed;
+    background-image     : url('https://cdn.pixabay.com/photo/2015/09/09/19/29/bookshelves-932780_960_720.jpg');
+    background-position  : center;
+    background-size      : cover;
+    background-repeat    : no-repeat;
+}
+
+/* https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_960_720.jpg */
+/* https://cdn.pixabay.com/photo/2016/10/08/10/50/tu-delft-1723434_960_720.jpg */
+
+.teachers h1 {
+    font-weight     : 400;
+    color           : #fff;
+    border-bottom   : 5px solid #fff;
+    background-color: rgba(0, 0, 0, 0.75)
+}
+
+.teachers .card {
+    border: none !important;
+}
+
 .teachers p {
     margin : 0px;
     padding: 10px 15px 20px;
 }
 
 .teachers img {
-    width           : 200px !important;
-    border-radius   : 100vh;
-    background-color: #fff;
-    margin-bottom   : 20px;
+    width        : 200px !important;
+    border-radius: 100vh;
+    margin-bottom: 20px;
 }
 
-#teachersBlock > div:nth-child(1) > div > img{
+#teachersBlock>div:nth-child(1)>div>img {
     transition-property: all !important;
-    transition: all ease .5s !important;
+    transition         : all ease .5s !important;
 }
 
 .teachers .col-sm-12>div {
-    background-color       : #fff;
-    border-top-left-radius : 5px;
-    border-top-right-radius: 5px;
-    padding-top            : 20px;
+    border-radius: 5px;
+    padding-top  : 20px;
 }
 
 .teachers button {
@@ -95,4 +137,22 @@ li.align-self-center>a.nav-link {
     padding         : 5px;
     margin-bottom   : 5px;
     margin-top      : 10px;
+}
+
+@media screen and (max-width: 991px) {
+    #brand {
+        display: initial;
+        color  : #fff !important;
+        padding: 10px;
+    }
+
+    #brand a {
+        color          : #fff;
+        text-decoration: none;
+    }
+
+    .schedule_div .col-md-3 button {
+        font-size: 14px !important;
+        height   : 50px;
+    }
 }
