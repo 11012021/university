@@ -1,17 +1,18 @@
 html,
 body {
     margin          : 0px;
-    min-width       : 100%;
-    min-height      : 100%;
+    min-width       : 100% !important;
+    min-height      : 100% !important;
+    height          : 100%;
     background-color: rgb(240, 240, 240) !important;
 }
 
 header {
+    width           : 100%;
     background-color: #102b72;
-    position        : -webkit-sticky;
-    position        : sticky;
+    position        : fixed;
     top             : 0px;
-    z-index         : 999;
+    z-index         : 9999;
 }
 
 #brand {
@@ -155,4 +156,23 @@ li.align-self-center>a.nav-link {
         font-size: 14px !important;
         height   : 50px;
     }
+}
+
+
+/* LOADER */
+.onload {
+    display: none !important;
+}
+
+.loader {
+    height         : 100% !important;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.loader img {
+    width       : 20vh;
+    justify-self: center;
+    align-items : center;
 }

@@ -1,27 +1,27 @@
 html,
 body {
   margin: 0;
-  width: 100%;
+  width : 100%;
   height: 100%;
 }
 
 .nav {
   background-color: #102b72;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
+  position        : fixed;
+  width           : 100%;
+  z-index         : 1000;
 }
 
 .nav-item a {
   padding: 30px 20px !important;
-  color: rgb(230, 230, 230) !important;
+  color  : rgb(230, 230, 230) !important;
 }
 
 .nav-item a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.navbar h3{
+.navbar h3 {
   display: none;
 }
 
@@ -34,19 +34,19 @@ body {
 }
 
 .navbar-toggler {
-  border: none !important;
-  box-shadow: none !important;
+  border             : none !important;
+  box-shadow         : none !important;
   transition-property: all !important;
-  transition: all ease .5s !important;
-  outline: none !important;
+  transition         : all ease .5s !important;
+  outline            : none !important;
 }
 
 .navbar-toggler-icon {
   background: url("/img/menu.png") center/cover !important;
 }
 
-li.align-self-center > a.nav-link {
-  margin-left: 50px;
+li.align-self-center>a.nav-link {
+  margin-left : 50px;
   margin-right: 50px;
 }
 
@@ -55,12 +55,12 @@ li.align-self-center > a.nav-link {
 }
 
 .carousel1 .carousel-caption {
-  padding: 50px;
+  padding         : 50px;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
 .carousel1 .carousel-caption h5 {
-  color: #102b72;
+  color      : #102b72;
   font-weight: 800;
 }
 
@@ -70,11 +70,11 @@ li.align-self-center > a.nav-link {
 
 .carousel1 .carousel-control-prev,
 .carousel1 .carousel-control-next {
-  height: 100px;
-  width: 50px !important;
-  margin-top: 45vh;
+  height          : 100px;
+  width           : 50px !important;
+  margin-top      : 45vh;
   background-color: #102b72 !important;
-  opacity: 100% !important;
+  opacity         : 100% !important;
 }
 
 .carousel1_img1 {
@@ -88,19 +88,20 @@ li.align-self-center > a.nav-link {
 .carousel1_img3 {
   background: url(../img/carousel1_img3.jpg) center / cover;
 }
+
 /*          START BLOCK          */
 
 .start {
   background-color: rgb(230, 230, 230);
-  padding: 50px 0px;
+  padding         : 50px 0px;
 }
 
 .start h3,
 .awards h3 {
-  font-size: 20px;
-  font-weight: 800;
+  font-size     : 20px;
+  font-weight   : 800;
   letter-spacing: -1px;
-  word-spacing: 5px;
+  word-spacing  : 5px;
 }
 
 .w-col {
@@ -108,20 +109,20 @@ li.align-self-center > a.nav-link {
 }
 
 .w-col-inner a {
-  color: white;
+  color        : white;
   border-bottom: 1px dotted white;
 }
 
 .w-col-inner a:hover {
-  color: white;
-  margin-left: 5px;
-  border-bottom: 1px solid white;
+  color          : white;
+  margin-left    : 5px;
+  border-bottom  : 1px solid white;
   text-decoration: none;
-  transition: 0.1s;
+  transition     : 0.1s;
 }
 
 .w-col h6 {
-  color: white;
+  color      : white;
   font-weight: 700;
 }
 
@@ -146,18 +147,16 @@ li.align-self-center > a.nav-link {
 /*          AWARDS BLOCK          */
 
 .awards {
-  padding: 50px;
+  padding   : 50px;
   margin-top: 50px;
   background: rgb(255, 255, 255);
-  background: radial-gradient(
-      circle,
+  background: radial-gradient(circle,
       rgba(255, 255, 255, 0) -50%,
-      rgba(16, 43, 114, 1) 100%
-    ),
+      rgba(16, 43, 114, 1) 100%),
     url(/img/awards.jpg);
   background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size    : cover;
+  background-repeat  : no-repeat;
 }
 
 .awards .carousel-item {
@@ -173,7 +172,7 @@ li.align-self-center > a.nav-link {
 }
 
 .secondAward {
-  color: white;
+  color           : white;
   background-color: #006d85a5;
 }
 
@@ -193,35 +192,35 @@ li.align-self-center > a.nav-link {
 }
 
 .thirdAward {
-  color: white;
+  color           : white;
   background-color: #604470a5;
 }
 
 .fourthAward {
-  color: white;
+  color           : white;
   background-color: #1c1c1ac5;
 }
 
 .fivthAward {
-  color: white;
+  color           : white;
   background-color: #971430a5;
 }
 
 .sixthAward {
-  color: white;
+  color           : white;
   background-color: #025a99b5;
 }
 
 .seventhAward {
-  color: #102b72;
+  color           : #102b72;
   background-color: #94d9ffa5;
 }
 
 .awardBtn {
-  padding: 10px 50px !important;
-  color: white !important;
+  padding         : 10px 50px !important;
+  color           : white !important;
   background-color: #88642e !important;
-  border-radius: 0px !important;
+  border-radius   : 0px !important;
 }
 
 /*          NEWS BLOCK          */
@@ -239,46 +238,46 @@ li.align-self-center > a.nav-link {
   background-image: linear-gradient(0deg, #102b72, #ffffff00),
     url(../img/carousel2_img1.jpg);
   background-position: center;
-  background-size: cover;
+  background-size    : cover;
 }
 
 .carousel2_img2 {
   background-image: linear-gradient(0deg, #102b72, #ffffff00),
     url(../img/carousel2_img2.jpg);
   background-position: center;
-  background-size: cover;
+  background-size    : cover;
 }
 
 .carousel3_img1 {
   background-image: linear-gradient(0deg, #102b72, #ffffff00),
     url(../img/carousel3_img1.jpg);
   background-position: center;
-  background-size: cover;
+  background-size    : cover;
 }
 
 .carousel3_img2 {
   background-image: linear-gradient(0deg, #102b72, #ffffff00),
     url(../img/carousel3_img2.jpg);
   background-position: center;
-  background-size: cover;
+  background-size    : cover;
 }
 
 .carousel2 .carousel-control-prev,
 .carousel2 .carousel-control-next,
 .carousel3 .carousel-control-prev,
 .carousel3 .carousel-control-next {
-  top: 50%;
-  height: 50px;
-  width: 50px !important;
+  top             : 50%;
+  height          : 50px;
+  width           : 50px !important;
   background-color: #102b72 !important;
-  opacity: 100% !important;
+  opacity         : 100% !important;
 }
 
 /*          FOOTER          */
 
 footer {
   background-color: #1c1c1c;
-  color: #cbcbcb;
+  color           : #cbcbcb;
 }
 
 footer a,
@@ -287,26 +286,49 @@ footer a:hover {
 }
 
 .address p {
-  width: 30vh;
+  width    : 30vh;
   font-size: 2vh !important;
 }
 
 /* media */
-@media screen and (max-width: 991px){
-  .awards{
+@media screen and (max-width: 991px) {
+  .awards {
     padding: 20px;
-  } 
-  .carousel-caption h5{
+  }
+
+  .carousel-caption h5 {
     font-size: 14px;
   }
-  .carousel-caption p{
+
+  .carousel-caption p {
     font-size: 12px;
   }
-  .navbar h3{
+
+  .navbar h3 {
     display: initial;
   }
-  .navbar h3 a{
-    color: #fff;
+
+  .navbar h3 a {
+    color          : #fff;
     text-decoration: none;
   }
+}
+
+
+/* LOADER */
+.onload {
+  display: none !important;
+}
+
+.loader{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader img {
+  width       : 20vh;
+  justify-self: center;
+  align-items : center;
 }

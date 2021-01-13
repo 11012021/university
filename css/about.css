@@ -132,3 +132,22 @@ footer a:hover {
     text-decoration: none;
   }
 }
+
+
+/* LOADER */
+.onload {
+  display: none;
+}
+
+.loader{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader img {
+  width       : 20vh;
+  justify-self: center;
+  align-items : center;
+}
