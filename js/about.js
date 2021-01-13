@@ -44,7 +44,11 @@ var swiper = new Swiper('.swiper-container', {
         slidesPerView: 5,
         spaceBetween: 20,
       },
-    }
+    },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
   });
 
 // Navbar-toggler animation

@@ -87,49 +87,6 @@ footer a:hover {
   padding: 0px 10px;
 }
 
-/* media */
-@media screen and (max-width: 1300px) {
-  .card img {
-    width: 25vh;
-  }
-
-  .card p{
-    padding: 0px 10px;
-  }
-}
-
-@media screen and (max-width: 840px) {
-  .card img {
-    width: 20vh;
-  }
-
-  .card p{
-    padding: 0px 10px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .card img{
-    width: 25vh;
-  }
-
-  .card p {
-    font-size: 16px;
-    padding: 0px 10px;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .card img{
-    width: 30vh;
-  }
-
-  .card p {
-    font-size: 16px;
-  }
-}
-
-
 /* LOADER */
 .onload {
   display: none;
@@ -176,4 +133,56 @@ footer a:hover {
   display        : flex;
   justify-content: center;
   align-items    : center;
+}
+
+/* media */
+@media screen and (max-width: 1300px) {
+  .card img {
+    width: 25vh;
+  }
+
+  .card p{
+    padding: 0px 10px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .card img {
+    width: 20vh;
+  }
+
+  .card p{
+    padding: 0px 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card img{
+    width: 25vh;
+  }
+
+  .card p {
+    font-size: 16px;
+    padding: 0px 10px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .card img{
+    width: 30vh;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+
+  .chessImgs h1,
+  .swiper-container h1{
+    padding: 10px 10vh;
+    font-size: 26px !important;
+  }
+
+  .swiper-slide{
+    margin-top: 0px;
+  }
 }
