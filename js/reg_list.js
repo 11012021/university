@@ -8,11 +8,6 @@ navToggler.addEventListener('click', () => {
     }
 })
 
-// delete scroll to block after reload
-window.addEventListener('load', () => {
-    window.location.hash = '';
-})
-
 // creating teachersBlock
 let teachersBlock = document.querySelector('#teachersBlock')
 
@@ -49,4 +44,7 @@ window.addEventListener('load', () => {
     })
     loader.classList.remove('loader')
     loader.setAttribute('style', 'display: none')
+
+    // delete scroll to block after reload
+    window.location.hash = 'schedule';
 })
