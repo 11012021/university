@@ -82,3 +82,33 @@ DELETEteacher.forEach(item => {
     }
   })
 })
+
+
+
+
+
+// PUT nahoi (update teachers data)
+// fetch('https://parseapi.back4app.com/classes/teachers/C8doEph3UN', {
+//   method: 'PUT',
+//   headers: {
+//     'Content-Type': 'application/json',
+//     "X-Parse-Application-Id": 'rSH7h3XKubJC41kGP5HpR9ZZxk6rIBn4wH4OPxvn',
+//     'X-Parse-REST-API-Key': ' w7OBKLeup2Cv965yIpsYJUzuIZw2dUPnc9yJWUbL'
+//   },
+//   body: JSON.stringify({
+//     "Age": 2021
+//   })
+// })
+
+
+
+// GET nahoi (show teachers data)
+// fetch('https://parseapi.back4app.com/classes/teachers',
+//   {
+//     headers: {
+//       'X-Parse-Application-Id': 'rSH7h3XKubJC41kGP5HpR9ZZxk6rIBn4wH4OPxvn',
+//       'X-Parse-REST-API-Key': 'w7OBKLeup2Cv965yIpsYJUzuIZw2dUPnc9yJWUbL'
+//     }
+//   })
+//   .then(response => response.json())
+//   .then(json => console.log(json.results))

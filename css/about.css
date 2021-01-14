@@ -63,6 +63,17 @@ li.align-self-center>a.nav-link {
   margin: 0px;
 }
 
+.awards .col-md-5 {
+  overflow     : scroll;
+  overflow-x   : hidden;
+  height       : 300px;
+  margin-bottom: 20px;
+}
+
+.awards .col-md-7{
+  margin-bottom: 20px;
+}
+
 /* footer */
 footer {
   background-color: #1c1c1c;
@@ -83,7 +94,7 @@ footer a:hover {
   width: 30vh;
 }
 
-.card p{
+.card p {
   padding: 0px 10px;
 }
 
@@ -108,20 +119,22 @@ footer a:hover {
 /* SWIPER.JS */
 .swiper-container {
   background-color: rgb(245, 245, 245);
-  width : 100%;
-  height: 100%;
+  width           : 100%;
+  height          : 100%;
+  padding-bottom  : 10vh;
 }
 
 .swiper-container h1,
-.chessImgs h1{
-  width: fit-content;
-  margin: 0 auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding: 10px 20vh;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0px 5px 10px #aaa;
+.chessImgs h1,
+.awards h1 {
+  width           : fit-content;
+  margin          : 0 auto;
+  margin-top      : 50px;
+  margin-bottom   : 50px;
+  padding         : 10px 20vh;
+  border          : 1px solid #ddd;
+  border-radius   : 5px;
+  box-shadow      : 0px 5px 10px #aaa;
   background-color: #fff;
 }
 
@@ -129,11 +142,39 @@ footer a:hover {
   margin         : 50px 0px;
   text-align     : center;
   font-size      : 18px;
-  background     : #ccc;
   display        : flex;
   justify-content: center;
   align-items    : center;
 }
+
+/* AWARDS */
+.carousel2 .carousel-item {
+  height: 300px;
+}
+
+.carousel2_img1 {
+  background-image: linear-gradient(0deg, #102b72, #ffffff00),
+    url(../img/carousel2_img1.jpg);
+  background-position: center;
+  background-size    : cover;
+}
+
+.carousel2_img2 {
+  background-image: linear-gradient(0deg, #102b72, #ffffff00),
+    url(../img/carousel2_img2.jpg);
+  background-position: center;
+  background-size    : cover;
+}
+
+.carousel2 .carousel-control-prev,
+.carousel2 .carousel-control-next {
+  top             : 45%;
+  height          : 50px;
+  width           : 50px !important;
+  background-color: #102b72 !important;
+  opacity         : 100% !important;
+}
+
 
 /* media */
 @media screen and (max-width: 1300px) {
@@ -141,7 +182,7 @@ footer a:hover {
     width: 25vh;
   }
 
-  .card p{
+  .card p {
     padding: 0px 10px;
   }
 }
@@ -151,24 +192,35 @@ footer a:hover {
     width: 20vh;
   }
 
-  .card p{
+  .card p {
     padding: 0px 10px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .card img{
+  .card img {
     width: 25vh;
   }
 
   .card p {
     font-size: 16px;
-    padding: 0px 10px;
+    padding  : 0px 10px;
+  }
+
+  .chessImgs h1,
+  .swiper-container h1,
+  .awards h1 {
+    padding  : 10px 10vh;
+    font-size: 24px !important;
+  }
+
+  .swiper-slide {
+    margin-top: 0px !important;
   }
 }
 
 @media screen and (max-width: 425px) {
-  .card img{
+  .card img {
     width: 30vh;
   }
 
@@ -176,13 +228,7 @@ footer a:hover {
     font-size: 16px;
   }
 
-  .chessImgs h1,
-  .swiper-container h1{
-    padding: 10px 10vh;
-    font-size: 26px !important;
-  }
-
-  .swiper-slide{
+  .swiper-slide {
     margin-top: 0px;
   }
 }
