@@ -5,7 +5,24 @@ body {
     min-height      : 100% !important;
     height          : 100%;
     background-color: rgb(240, 240, 240) !important;
-    scroll-behavior: smooth !important;
+    scroll-behavior : smooth !important;
+}
+
+body::-webkit-scrollbar {
+    width : 12px;
+    height: 12px;
+}
+
+body::-webkit-scrollbar-track-piece {
+    background-color: #ddd;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #102b72;
+}
+
+body::-webkit-scrollbar-corner {
+    background-color: #102b72;
 }
 
 header {
@@ -109,7 +126,10 @@ li.align-self-center>a.nav-link {
 
 .teachers p {
     margin : 0px;
-    padding: 10px 15px 20px;
+}
+
+.teachers button{
+    margin-top: 20px;
 }
 
 .teachers img {

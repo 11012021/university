@@ -6,6 +6,23 @@ body {
   background-color: #dae1f0 !important;
 }
 
+body::-webkit-scrollbar {
+  width : 12px;
+  height: 12px;
+}
+
+body::-webkit-scrollbar-track-piece {
+  background-color: #ddd;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #102b72;
+}
+
+body::-webkit-scrollbar-corner {
+  background-color: #102b72;
+}
+
 .nav {
   background-color: #102b72;
   width           : 100%;
@@ -20,7 +37,7 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.navbar h3{
+.navbar h3 {
   display: none;
 }
 
@@ -120,12 +137,13 @@ footer a:hover {
   font-size: 2vh !important;
 }
 
-@media screen and (max-width: 991px){
-  .navbar h3{
+@media screen and (max-width: 991px) {
+  .navbar h3 {
     display: initial;
   }
-  .navbar h3 a{
-    color: #fff;
+
+  .navbar h3 a {
+    color          : #fff;
     text-decoration: none;
   }
 }
@@ -136,11 +154,11 @@ footer a:hover {
   display: none !important;
 }
 
-.loader{
-  height: 100%;
-  display: flex;
+.loader {
+  height         : 100%;
+  display        : flex;
   justify-content: center;
-  align-items: center;
+  align-items    : center;
 }
 
 .loader img {

@@ -11,13 +11,15 @@ navToggler.addEventListener('click', () => {
 // creating teachersBlock
 let teachersBlock = document.querySelector('#teachersBlock')
 
-function cardTemplate(imgUrl, teacherLink) {
+function cardTemplate(firstname, lastname, age, typeofteacher, room, imgUrl, teacherLink) {
     return card = `
 <div class="col-lg-4 col-md-5 col-sm-12 p-lg-5 p-3">
     <div class="card">
         <div class="card-body p-0">
             <img class="w-100" src="${imgUrl}" alt="...">
-            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+            <p><b>${firstname} ${lastname} ${age} лет</b></p>
+            <p><b>Должность:</b> ${typeofteacher}</p>
+            <p><b>Кабинет:</b> ${room}</p>
             <a href="${teacherLink}"><button class="btn btn-secondary w-100">Подробнее</button></a>
         </div>
     </div>
@@ -25,10 +27,26 @@ function cardTemplate(imgUrl, teacherLink) {
 `
 }
 
-for (let i = 0; i < 8; i++) {
-    cardTemplate('https://cutt.ly/OjcRP6y', '/html/profile.html')
-    teachersBlock.insertAdjacentHTML('afterbegin', card)
-}
+// GET nahoi (show teachers data)
+fetch('https://parseapi.back4app.com/classes/teachers',
+    {
+        headers: {
+            'X-Parse-Application-Id': 'Sbmh1dqC6y29EhgLdXZsC0UfuG5Ij5LZqTXgmgWz',
+            'X-Parse-REST-API-Key': 'igRmoVIOsA7YH0O31rB3nSkrE7dxMLu0VVHa6rVy'
+        }
+    })
+    .then(response => response.json())
+    .then(json => {
+        let teachersArray = []
+        json.results.forEach(item => {
+            cardTemplate(item.firstname, item.lastname, item.age, item.typeofteacher, item.room, item.photo.url, '/html/profile.html')
+            teachersArray.unshift(card)
+        })
+        for (let i = 0; i < teachersArray.length; i++) {
+            teachersBlock.insertAdjacentHTML('afterbegin', teachersArray[i])
+        }
+    })
+
 
 // LOADER
 let page = document.querySelectorAll('.page');

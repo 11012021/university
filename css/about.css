@@ -5,6 +5,23 @@ body {
   height: 100%;
 }
 
+body::-webkit-scrollbar {
+  width : 12px;
+  height: 12px;
+}
+
+body::-webkit-scrollbar-track-piece {
+  background-color: #ddd;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #102b72;
+}
+
+body::-webkit-scrollbar-corner {
+  background-color: #102b72;
+}
+
 .nav {
   background-color: #102b72;
   width           : 100%;
@@ -64,13 +81,27 @@ li.align-self-center>a.nav-link {
 }
 
 .awards .col-md-5 {
-  overflow     : scroll;
-  overflow-x   : hidden;
-  height       : 300px;
-  margin-bottom: 20px;
+  overflow       : scroll;
+  overflow-x     : hidden;
+  scrollbar-width: 3px !important;
+  height         : 300px;
+  margin-bottom  : 20px;
 }
 
-.awards .col-md-7{
+.awards .col-md-5::-webkit-scrollbar {
+  width : 7px;
+  height: 3px;
+}
+
+.awards .col-md-5::-webkit-scrollbar-track-piece {
+  background-color: #aaa;
+}
+
+.awards .col-md-5::-webkit-scrollbar-thumb {
+  background-color: #555;
+}
+
+.awards .col-md-7 {
   margin-bottom: 20px;
 }
 

@@ -106,9 +106,9 @@ DELETEteacher.forEach(item => {
 // fetch('https://parseapi.back4app.com/classes/teachers',
 //   {
 //     headers: {
-//       'X-Parse-Application-Id': 'rSH7h3XKubJC41kGP5HpR9ZZxk6rIBn4wH4OPxvn',
-//       'X-Parse-REST-API-Key': 'w7OBKLeup2Cv965yIpsYJUzuIZw2dUPnc9yJWUbL'
+//       'X-Parse-Application-Id': 'Sbmh1dqC6y29EhgLdXZsC0UfuG5Ij5LZqTXgmgWz',
+//       'X-Parse-REST-API-Key': 'igRmoVIOsA7YH0O31rB3nSkrE7dxMLu0VVHa6rVy'
 //     }
 //   })
 //   .then(response => response.json())
-//   .then(json => console.log(json.results))
+//   .then(json => {console.log(json.results);})
