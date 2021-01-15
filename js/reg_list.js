@@ -27,7 +27,7 @@ function cardTemplate(firstname, lastname, age, typeofteacher, room, imgUrl, tea
 `
 }
 
-// GET nahoi (show teachers data)
+// GET (show teachers data)
 fetch('https://parseapi.back4app.com/classes/teachers',
     {
         headers: {
