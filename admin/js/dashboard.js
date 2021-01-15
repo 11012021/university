@@ -154,7 +154,7 @@ fetch('https://parseapi.back4app.com/classes/teachers',
 
 
 
-// PUT nahoi (update teachers data)
+// PUT (update teachers data)
 // fetch('https://parseapi.back4app.com/classes/teachers/C8doEph3UN', {
 //   method: 'PUT',
 //   headers: {
@@ -167,9 +167,7 @@ fetch('https://parseapi.back4app.com/classes/teachers',
 //   })
 // })
 
-
-
-// GET nahoi (show teachers data)
+// GET (show teachers data)
 // fetch('https://parseapi.back4app.com/classes/teachers',
 //   {
 //     headers: {
