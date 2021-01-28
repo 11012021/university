@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="utf-8">
@@ -13,59 +13,19 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="css/style.css" rel="stylesheet">
-  <style>
 
-  </style>
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body class="grey lighten-3">
-
-  <!--Main Navigation-->
   <header>
-
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light white">
       <div class="container-fluid">
-
-        <!-- Brand -->
-        <a class="navbar-brand waves-effect" href="">
-          <strong class="blue-text">Osh KUU Admin</strong>
-        </a>
-
-        <!-- Right -->
-        <ul class="navbar-nav nav-flex-icons">
-          <li class="nav-item">
-            <a href="#" class="nav-link waves-effect" target="_blank">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link waves-effect" target="_blank">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link waves-effect" target="_blank">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
-        </ul>
-
-      </div>
-
+        <a class="navbar-brand waves-effect" href=""><strong class="blue-text">Osh KUU Admin</strong></a>
       </div>
     </nav>
-    <!-- Navbar -->
-
-    <!-- Sidebar -->
     <div class="sidebar-fixed position-fixed text-center">
-
-      <a class="logo-wrapper">
-        <img src="https://cutt.ly/sjcRGGs" class="img-fluid rounded-circle" alt="">
-      </a>
-
+      <a class="logo-wrapper"><img src="https://cutt.ly/sjcRGGs" class="img-fluid rounded-circle" alt=""></a>
       <div class="list-group list-group-flush text-left">
         <a href="#" class="list-group-item list-group-item-action waves-effect" id="teachers_btn">
           <i class="fas fa-user mr-3"></i>Teachers</a>
@@ -74,15 +34,10 @@
         <a href="#" class="list-group-item list-group-item-action waves-effect" id="schedule_btn">
           <i class="fas fa-map mr-3"></i>Schedule</a>
       </div>
-
     </div>
-    <!-- Sidebar -->
-
   </header>
-  <!--Main Navigation-->
   <section id="ttop"></section>
-  <main>
-
+  <main style="padding-bottom: 50px;">
     <div class="teachers" id="teachersBlock">
       <button class="btn btn-primary" id="CREATEteacher">Create Teacher</button>
       <div class="row justify-content-center" id="teachersBlockRow">
@@ -93,53 +48,50 @@
       </div>
     </div>
     <section id="tbot"></section>
-
     <div class="news" id="newsBlock" style="display: none;">
       <div class="container">
-        <h1>Ad</h1>
+        <div class="row" id="newsBlockRow"></div>
       </div>
     </div>
-
     <div class="schedule" id="scheduleBlock" style="display: none;">
       <div class="schedule_div">
-        <div class="text-center download_div">
-          <table>
-            <thead>
-              <th>1-ый курс</th>
-              <th>2-ой курс</th>
-              <th>3-ий курс</th>
-            </thead>
-
-            <tbody>
-              <tr class="первая строка">
-                <td><a href=""><button class="btn btn-primary">Загрузить расписание</button></a></td>
-                <td><a href=""><button class="btn btn-primary">Загрузить расписание</button></a></td>
-                <td><a href=""><button class="btn btn-primary">Загрузить расписание</button></a></td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="container text-center schedule_div page">
+          <div class="row justify-content-center p-md-5">
+            <div class="col-sm-12 col-md-5 col-lg-3 p-0 align-self-end">
+              <h3 class="mb-4">I курс</h3>
+              <a download="Расписание 1 курс.xlsx" href="/files/Расписание 1 курс.xlsx">
+                <button class="btn btn-primary w-100">Загрузить расписание</button></a>
+            </div>
+            <div class="col-sm-12 col-md-5 col-lg-3 p-0">
+              <h3 class="mb-4">II курс</h3>
+              <a download="Расписание 2 курс.xlsx" href="/files/Расписание 2 курс.xlsx">
+                <button class="btn btn-primary w-100">Загрузить расписание</button></a>
+            </div>
+            <div class="col-sm-12 col-md-5 col-lg-3 p-0">
+              <h3 class="mb-4">III курс</h3>
+              <a download="Расписание 3 курс.xlsx" href="/files/Расписание 3 курс.xlsx">
+                <button class="btn btn-primary w-100">Загрузить расписание</button></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
     <div class="footerNav">
-      <nav class="navbar fixed-bottom navbar-expand-lg navbar-light white">
+      <nav class="navbar fixed-bottom navbar-expand-lg navbar-light white p-0">
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a class="nav-link" href=""><i class="fas fa-user mr-3"></i>Teachers</a>
+            <a href="#" class="list-group-item list-group-item-action waves-effect" id="teachers_btn">Teachers</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=""><i class="fas fa-table mr-3"></i>News</a></a>
+            <a href="#" class="list-group-item list-group-item-action waves-effect" id="news_btn">News</a>
           </li>
           <li class="nav-item d-flex">
-            <a class="nav-link" href=""><i class="fas fa-map mr-3"></i>Schedule</a>
+            <a href="#" class="list-group-item list-group-item-action waves-effect" id="schedule_btn">Schedule</a>
           </li>
         </ul>
       </nav>
     </div>
   </main>
-  <!--Main layout-->
-
   <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -150,7 +102,6 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Initializations -->
-
   <script src="js/dashboard.js"></script>
 </body>
 

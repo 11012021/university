@@ -100,4 +100,3 @@ fetch('https://parseapi.back4app.com/classes/news',
             newsBlock.insertAdjacentHTML('afterbegin', newsArray[i])
         }
     })
-
