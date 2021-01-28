@@ -98,7 +98,7 @@ li.align-self-center>a.nav-link {
 }
 
 .date {
-    float: right;
+    text-align: right;
 }
 
 /* teachers */
@@ -125,10 +125,10 @@ li.align-self-center>a.nav-link {
 }
 
 .teachers p {
-    margin : 0px;
+    margin: 0px;
 }
 
-.teachers button{
+.teachers button {
     margin-top: 20px;
 }
 
@@ -141,6 +141,10 @@ li.align-self-center>a.nav-link {
 #teachersBlock>div:nth-child(1)>div>img {
     transition-property: all !important;
     transition         : all ease .5s !important;
+}
+
+#teachersBlock #fullname {
+    padding: 0 20px;
 }
 
 .teachers .col-sm-12>div {
@@ -176,6 +180,10 @@ li.align-self-center>a.nav-link {
     .schedule_div .col-md-3 button {
         font-size: 14px !important;
         height   : 50px;
+    }
+
+    #fullname {
+        padding: 0px 0px !important;
     }
 }
 

@@ -4,6 +4,12 @@ body {
   height         : 100%;
 }
 
+main {
+  padding-top  : 80px;
+  padding-left : 300px;
+  padding-right: 30px;
+}
+
 .sidebar-fixed {
   height: 100vh;
   width : 270px;
@@ -69,24 +75,63 @@ th {
 
 .moveBTNS {
   position      : fixed;
-  right         : 0;
+  right         : 20px;
   bottom        : 0;
+  margin-bottom : 20px;
   flex-direction: column;
   z-index       : 9999;
 }
 
+.moveBTNS a {
+  width : fit-content;
+  height: fit-content;
+}
+
 .moveBTNS button {
   border-radius: 50px;
-  width        : 100px;
-  padding      : 10px;
-  font-size    : 10px !important;
+  width        : 40px;
+  height       : 40px;
+  padding      : 0px;
+  font-size    : 24px !important;
+  margin-top   : 10px !important;
+}
+
+/* TEACHERS */
+#teachersBlockRow button {
+  margin    : 0px;
+  margin-top: 20px;
+}
+
+#teachersBlockRow p {
+  margin   : 0px;
+  padding  : 0px 20px;
+  font-size: 14px;
+}
+
+#teachersBlockRow .card {
+  width     : 100%;
+  text-align: center;
 }
 
 /* MEDIA */
 @media (min-width: 1200px) {
+
   .navbar,
   .page-footer,
   main {
     padding-left: 270px;
+  }
+}
+
+@media (max-width: 768px){
+  main{
+    padding-left: 30px;
+  }
+
+  .sidebar-fixed{
+    display: none;
+  }
+  .moveBTNS{
+    bottom: 70px;
   }
 }

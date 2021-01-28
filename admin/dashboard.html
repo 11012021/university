@@ -62,7 +62,7 @@
     <!-- Sidebar -->
     <div class="sidebar-fixed position-fixed text-center">
 
-      <a class="logo-wrapper waves-effect">
+      <a class="logo-wrapper">
         <img src="https://cutt.ly/sjcRGGs" class="img-fluid rounded-circle" alt="">
       </a>
 
@@ -81,19 +81,22 @@
   </header>
   <!--Main Navigation-->
   <section id="ttop"></section>
-  <main style='padding-top: 80px; padding-left: 300px; padding-right: 30px;'>
+  <main>
+
     <div class="teachers" id="teachersBlock">
       <button class="btn btn-primary" id="CREATEteacher">Create Teacher</button>
-      <div class="d-flex moveBTNS">
-        <a href="#ttop"><button class="btn btn-danger">Move up</button></a>
-        <a href="#tbot"><button class="btn btn-danger">Move down</button></a>
+      <div class="row justify-content-center" id="teachersBlockRow">
+        <div class="d-flex moveBTNS">
+          <a href="#ttop"><button class="btn btn-danger">▲</button></a>
+          <a href="#tbot"><button class="btn btn-danger">▼</button></a>
+        </div>
       </div>
     </div>
     <section id="tbot"></section>
 
     <div class="news" id="newsBlock" style="display: none;">
       <div class="container">
-          <h1>Ad</h1>
+        <h1>Ad</h1>
       </div>
     </div>
 
@@ -117,6 +120,22 @@
           </table>
         </div>
       </div>
+    </div>
+
+    <div class="footerNav">
+      <nav class="navbar fixed-bottom navbar-expand-lg navbar-light white">
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a class="nav-link" href=""><i class="fas fa-user mr-3"></i>Teachers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=""><i class="fas fa-table mr-3"></i>News</a></a>
+          </li>
+          <li class="nav-item d-flex">
+            <a class="nav-link" href=""><i class="fas fa-map mr-3"></i>Schedule</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </main>
   <!--Main layout-->
