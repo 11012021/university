@@ -10,10 +10,6 @@ let lastUser;
 get_btn.addEventListener('click', () => {
     API.get('https://parseapi.back4app.com/classes/teachers', res => {
         console.log('GET response:', res);
-
-        // 17 строка кода находит АЙДИ ПОСЛЕДНЕГО ЮЗЕРА для DELETE запроса 
-        // (который удаляет последнего юзера по умолчанию)
-
         lastUser = res[res.length - 1].objectId
         console.log('lastUserId:', lastUser);
     })
@@ -36,7 +32,6 @@ post_btn.addEventListener('click', () => {
 })
 
 put_btn.addEventListener('click', () => {
-    // АЙДИ ПЕРВОГО ЮЗЕРА === 'snO3WoovkC'
     API.put('https://parseapi.back4app.com/classes/teachers', 'snO3WoovkC',
         JSON.stringify({
             "firstname": "NEWVALUE"

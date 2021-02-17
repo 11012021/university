@@ -1,6 +1,6 @@
 function callAPI() {
     const ApplicationID = 'Sbmh1dqC6y29EhgLdXZsC0UfuG5Ij5LZqTXgmgWz',
-        ApiKey = 'igRmoVIOsA7YH0O31rB3nSkrE7dxMLu0VVHa6rVy';
+          ApiKey = 'igRmoVIOsA7YH0O31rB3nSkrE7dxMLu0VVHa6rVy';
 
     return {
         get: function (URL, func) {
@@ -75,7 +75,7 @@ function callAPI() {
 // https://parseapi.back4app.com/classes/news
 
 
-// API.get('https://parseapi.back4app.com/classes/teachers', func => {
+// API.get('https://parseapi.back4app.com/classes/teachers', res => {
 //     console.log(res);
 // })
 
