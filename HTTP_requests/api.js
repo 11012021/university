@@ -19,7 +19,6 @@ function callAPI() {
         },
 
         post: function (URL, body) {
-            body = ''
             fetch(URL,
                 {
                     method: 'POST',

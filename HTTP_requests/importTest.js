@@ -17,7 +17,7 @@ get_btn.addEventListener('click', () => {
 
 post_btn.addEventListener('click', () => {
     API.post('https://parseapi.back4app.com/classes/teachers',
-        {
+        JSON.stringify({
             "firstname"     : "",
             "lastname"      : "",
             "patronymic"    : "",
@@ -27,7 +27,7 @@ post_btn.addEventListener('click', () => {
             "typeofteacher" : "",
             "email"         : "",
             "room"          : ""
-        }
+        })
     )
 })
 

@@ -1,7 +1,7 @@
 import { API } from '../../HTTP_requests/api.js';
 
 
-// delete scroll to block after reload
+// delete URL#...
 window.addEventListener('load', () => {
   window.location.hash = '';
 })
@@ -50,7 +50,7 @@ scheduleBtn.forEach(btn => {
 let teacherCard = ''
 let teachersBlockRow = document.querySelector('#teachersBlockRow');
 
-function cardTemplateTeachers(firstname, lastname, work, imgURL) {
+function cardTemplateTeachers(firstname, lastname, patronymic, work, imgURL) {
   teacherCard = `
     <div class="col-lg-12 pl-md-5 pr-md-5 p-3">
       <div class="card-body bg-white rounded">
@@ -58,7 +58,7 @@ function cardTemplateTeachers(firstname, lastname, work, imgURL) {
           <img src="${imgURL}"
             alt="..." class="rounded-circle" width="150">
           <div class="mt-3">
-            <h4>${firstname} ${lastname}</h4>
+            <h4>${firstname} ${lastname} ${patronymic}</h4>
             <p class="mb-0">${work}</p>
             <button class="btn btn-danger" id="DELETEteacher">Удалить</button>
             <button class="btn btn-success" id="UPDATEteacher">Подробнее</button>
@@ -71,12 +71,8 @@ function cardTemplateTeachers(firstname, lastname, work, imgURL) {
 // TEACHERS CARD TEMPLATE
 
 
-// MODAL WINDOW INPUTS
+// MODAL WINDOW CHANGE INPUTS
 const changeLastName = document.querySelector('#changeLastName')
-changeLastName.addEventListener('input', () => {
-  console.log(changeLastName.value);
-  console.log(typeof (changeLastName));
-})
 const changeFirstName = document.querySelector('#changeFirstName')
 const changePatronymic = document.querySelector('#changePatronymic')
 const changeLesson = document.querySelector('#changeLesson')
@@ -87,8 +83,8 @@ const changeWAppNumber = document.querySelector('#changeWAppNumber')
 const changeEmail = document.querySelector('#changeEmail')
 const changeAvatar = document.querySelector('#changeAvatar')
 const updateBtn = document.querySelector('#update')
+// MODAL WINDOW CHANGE INPUTS
 
-// MODAL WINDOW INPUTS
 
 // API GET, APPEND TEACHERS AND MODAL DATA
 API.get('https://parseapi.back4app.com/classes/teachers', res => {
@@ -96,7 +92,7 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
   let objId = []
   res.forEach(item => {
     objId.push(item.objectId)
-    cardTemplateTeachers(item.firstname, item.lastname, item.typeofteacher, item.photo.url)
+    cardTemplateTeachers(item.firstname, item.lastname, item.patronymic, item.typeofteacher, item.photo.url)
     arr.unshift(teacherCard)
   })
 
@@ -113,7 +109,6 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
 
     btn.addEventListener('click', () => {
       let FIO = changeLastName.previousElementSibling.previousElementSibling;
-      console.log(FIO);
       let LESSON = changeLesson.previousElementSibling
       let AGE = changeAge.previousElementSibling
       let ROOM = changeRoom.previousElementSibling
@@ -123,7 +118,6 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
       let EMAIL = changeEmail.previousElementSibling
 
       modal.id = objId[index]
-      console.log(objId[index]);
       res.forEach(item => {
         if (objId[index] == item.objectId) {
           FIO.value = `${item.lastname} ${item.firstname} ${item.patronymic}`
@@ -144,37 +138,82 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
 
 
 // API PUT MODAL
-updateBtn.addEventListener('click', () => {
-  API.put('https://parseapi.back4app.com/classes/teachers', 'mJBRnw7fHX',
-    JSON.stringify(
-      {
-        "firstname": `${changeFirstName}`,
-        "lastname": `${changeLastName}`,
-        "patronymic": `${changePatronymic}`,
-        "age": `${changeAge}`,
-        "email": `${changeEmail}`,
-        "typeofteacher": `${changeLesson}`,
-        "room": `${changeRoom}`,
-        "phonenum": `${changePatronymic}`,
-        "whatsnum": `${changeWAppNumber}`,
-        "photo": { "__type": "File", "name": `${changeAvatar}` }
-      }
+API.get('https://parseapi.back4app.com/classes/teachers', res => {
+  updateBtn.addEventListener('click', (e) => {
+    API.put('https://parseapi.back4app.com/classes/teachers', e.target.parentElement.parentElement.parentElement.parentElement.id,
+      JSON.stringify({
+        "firstname": changeFirstName.value != '' ? changeFirstName.value : ' ',
+        "lastname": changeLastName.value != '' ? changeLastName.value : ' ',
+        "patronymic": changePatronymic.value != '' ? changePatronymic.value : ' ',
+        "age": changeAge.value != '' ? changeAge.value : ' ',
+        "email": changeEmail.value != '' ? changeEmail.value : ' ',
+        "typeofteacher": changeLesson.value != '' ? changeLesson.value : ' ',
+        "room": changeRoom.value != '' ? changeRoom.value : ' ',
+        "phonenumber": changePatronymic.value != '' ? changePatronymic.value : ' ',
+        "whatsnum": changeWAppNumber.value != '' ? changeWAppNumber.value : ' '
+
+        // "photo"         : new FormData(changeAvatar.parentElement)
+
+        // "photo": { "__type": "File", "name": changeAvatar.split(' ').join(' ') }
+      })
     )
-  )
+    confirm('Обновления вступят в силу после перезагрузки страницы.')
+  })
 })
 // API PUT MODAL
 
 
 // API DELETE
-let deleteTchrBtns = document.querySelectorAll('#DELETEteacher');
-deleteTchrBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    console.log('click');
-    let warn = prompt('Ввеите "УДАЛИТЬ" для подтверждения')
-    warn == "УДАЛИТЬ" ? API.delete('https://parseapi.back4app.com/classes/teachers', 'mJBRnw7fHX') : ''
+API.get('https://parseapi.back4app.com/classes/teachers', res => {
+  let delTchrBtns = document.querySelectorAll('#DELETEteacher');
+  delTchrBtns.forEach((btn, index) => {
+    btn.addEventListener('click', e => {
+      let warn = prompt('Ввеите "УДАЛИТЬ" для подтверждения действия!')
+      if (warn == "УДАЛИТЬ") {
+        API.delete('https://parseapi.back4app.com/classes/teachers', (res[index].objectId).split(' ').join(' '))
+        e.target.parentElement.parentElement.parentElement.parentElement.remove()
+      }
+    })
   })
 })
 // API DELETE
+
+
+// MODAL WINDOW CREATE INPUTS
+const createLastName = document.querySelector('#createLastName')
+const createFirstName = document.querySelector('#createFirstName')
+const createPatronymic = document.querySelector('#createPatronymic')
+const createLesson = document.querySelector('#createLesson')
+const createAge = document.querySelector('#createAge')
+const createRoom = document.querySelector('#createRoom')
+const createTel = document.querySelector('#createTel')
+const createWAppNumber = document.querySelector('#createWAppNumber')
+const createEmail = document.querySelector('#createEmail')
+// const createAvatar = document.querySelector('#createAvatar')
+const createBtn = document.querySelector('#create')
+// MODAL WINDOW CREATE INPUTS
+
+
+// API POST
+createBtn.addEventListener('click', () => {
+  console.log(createFirstName.value);
+  API.post('https://parseapi.back4app.com/classes/teachers',
+    JSON.stringify({
+      "firstname": createFirstName.value != '' ? createFirstName.value : ' ',
+      "lastname": createLastName.value != '' ? createLastName.value : ' ',
+      "patronymic": createPatronymic.value != '' ? createPatronymic.value : ' ',
+      "age": createAge.value != '' ? createAge.value : ' ',
+      "phonenumber": createTel.value != '' ? createTel.value : ' ',
+      "whatsnum": createWAppNumber.value != '' ? createWAppNumber.value : ' ',
+      "typeofteacher": createLesson.value != '' ? createLesson.value : ' ',
+      "email": createEmail.value != '' ? createEmail.value : ' ',
+      "room": createRoom.value != '' ? createRoom.value : ' '
+    })
+  )
+  confirm('Обновления вступят в силу после перезагрузки страницы.')
+})
+// API POST
+
 
 // NEWS
 let newsCard = ''
