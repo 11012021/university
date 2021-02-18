@@ -139,25 +139,28 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
 
 // API PUT MODAL
 API.get('https://parseapi.back4app.com/classes/teachers', res => {
-  updateBtn.addEventListener('click', (e) => {
-    API.put('https://parseapi.back4app.com/classes/teachers', e.target.parentElement.parentElement.parentElement.parentElement.id,
-      JSON.stringify({
-        "firstname": changeFirstName.value != '' ? changeFirstName.value : ' ',
-        "lastname": changeLastName.value != '' ? changeLastName.value : ' ',
-        "patronymic": changePatronymic.value != '' ? changePatronymic.value : ' ',
-        "age": changeAge.value != '' ? changeAge.value : ' ',
-        "email": changeEmail.value != '' ? changeEmail.value : ' ',
-        "typeofteacher": changeLesson.value != '' ? changeLesson.value : ' ',
-        "room": changeRoom.value != '' ? changeRoom.value : ' ',
-        "phonenumber": changePatronymic.value != '' ? changePatronymic.value : ' ',
-        "whatsnum": changeWAppNumber.value != '' ? changeWAppNumber.value : ' '
+  res.forEach(item => {
+    updateBtn.addEventListener('click', (e) => {
+      if (item.objectId == e.target.parentElement.parentElement.parentElement.parentElement.id) {
+        API.put('https://parseapi.back4app.com/classes/teachers', item.objectId,
+          JSON.stringify({
+            "firstname": changeFirstName.value != '' ? changeFirstName.value : item.firstname,
+            "lastname": changeLastName.value != '' ? changeLastName.value : item.lastname,
+            "patronymic": changePatronymic.value != '' ? changePatronymic.value : item.patronymic,
+            "age": createAge.value < 0 ? confirm('Ошибка ввода в поле "Возраст"!') : createAge.value != '' ? createAge.value : (item.age, confirm('Значения остались изначальными!')),
+            "email": changeEmail.value != '' ? changeEmail.value : item.email,
+            "typeofteacher": changeLesson.value != '' ? changeLesson.value : item.typeofteacher,
+            "room": createRoom.value < 0 ? confirm('Ошибка ввода в поле "Кабинет"!') : createRoom.value != '' ? createRoom.value : item.room,
+            "phonenumber": changeTel.value != '' ? changeTel.value : item.phonenumber,
+            "whatsnum": changeWAppNumber.value != '' ? changeWAppNumber.value : item.whatsnum
 
-        // "photo"         : new FormData(changeAvatar.parentElement)
+            // "photo"         : new FormData(changeAvatar.parentElement)
 
-        // "photo": { "__type": "File", "name": changeAvatar.split(' ').join(' ') }
-      })
-    )
-    confirm('Обновления вступят в силу после перезагрузки страницы.')
+            // "photo": { "__type": "File", "name": changeAvatar.split(' ').join(' ') }
+          })
+        )
+        window.location.reload()      }
+    })
   })
 })
 // API PUT MODAL
@@ -172,6 +175,9 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
       if (warn == "УДАЛИТЬ") {
         API.delete('https://parseapi.back4app.com/classes/teachers', (res[index].objectId).split(' ').join(' '))
         e.target.parentElement.parentElement.parentElement.parentElement.remove()
+        confirm('Удалено!')
+      }else{
+        confirm('Отменено!')
       }
     })
   })
@@ -202,15 +208,15 @@ createBtn.addEventListener('click', () => {
       "firstname": createFirstName.value != '' ? createFirstName.value : ' ',
       "lastname": createLastName.value != '' ? createLastName.value : ' ',
       "patronymic": createPatronymic.value != '' ? createPatronymic.value : ' ',
-      "age": createAge.value != '' ? createAge.value : ' ',
+      "age": createAge.value < 0 ? confirm('Ошибка ввода в поле "Возраст"!') : createAge.value != '' ? createAge.value : ' ',
+      "room": createRoom.value < 0 ? confirm('Ошибка ввода в поле "Кабинет"!') : createRoom.value != '' ? createRoom.value : ' ',
       "phonenumber": createTel.value != '' ? createTel.value : ' ',
       "whatsnum": createWAppNumber.value != '' ? createWAppNumber.value : ' ',
       "typeofteacher": createLesson.value != '' ? createLesson.value : ' ',
-      "email": createEmail.value != '' ? createEmail.value : ' ',
-      "room": createRoom.value != '' ? createRoom.value : ' '
+      "email": createEmail.value != '' ? createEmail.value : ' '
     })
   )
-  confirm('Обновления вступят в силу после перезагрузки страницы.')
+  window.location.reload()
 })
 // API POST
 
