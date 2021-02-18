@@ -179,6 +179,18 @@ main {
   #CREATEteacher {
     width: 100%;
   }
+
+  #AgeRow {
+    display: block !important;
+  }
+
+  #AgeRow input {
+    width: 100% !important;
+  }
+
+  #AgeRow>div {
+    margin-bottom: 2em;
+  }
 }
 
 @media (max-width: 375px) {

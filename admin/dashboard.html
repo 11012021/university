@@ -13,7 +13,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="css/mdb.min.css" rel="stylesheet">
-
+  <!-- User Styles -->
   <link href="css/style.css" rel="stylesheet">
 </head>
 
@@ -39,7 +39,8 @@
   <section id="ttop"></section>
   <main style="padding-bottom: 50px;">
     <div class="teachers" id="teachersBlock">
-      <button class="btn btn-primary" id="CREATEteacher">Добавить учителя</button>
+      <button class="btn btn-primary" id="CREATEteacher" data-target="#CREATEteacherModal" data-toggle="modal">Добавить
+        учителя</button>
       <div class="row justify-content-center" id="teachersBlockRow">
         <div class="d-flex moveBTNS">
           <a href="#ttop"><button class="btn btn-danger">▲</button></a>
@@ -92,7 +93,7 @@
       </nav>
     </div>
 
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+    <div class="modal fade" id="" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
         <div class="modal-content">
@@ -105,7 +106,7 @@
           <div class="modal-body">
             <div class="d-block">
               <b>Ф.И.О:</b>
-              <input class="form-control mb-3" type="text" disabled value="... ... ...">
+              <input class="form-control mb-3" type="text" disabled value="Пусто...">
               <b>Фамилия:</b>
               <input class="form-control mb-3" type="text" placeholder="Редактировать..." id="changeLastName">
               <b>Имя:</b>
@@ -117,7 +118,7 @@
             <div class="mt-5">
               <b class="m-2">Преподаваемый урок:</b>
               <div class="d-flex">
-                <input type="text" class="form-control m-2" disabled value="..." />
+                <input type="text" class="form-control m-2" disabled value="Пусто..." />
                 <input type="text" class="form-control m-2" placeholder="Редактировать..." id="changeLesson" />
               </div>
             </div>
@@ -125,25 +126,26 @@
             <div class="mt-5">
               <b class="m-2">Email:</b>
               <div class="d-flex">
-                <input type="email" class="form-control m-2" disabled value="..." />
+                <input type="email" class="form-control m-2" disabled value="Пусто..." />
                 <input type="email" class="form-control m-2" placeholder="Редактировать..." id="changeEmail" />
               </div>
             </div>
 
-            <div class="d-flex justify-content-between w-100 mt-5">
+            <div class="d-flex justify-content-between w-100 mt-5" id="AgeRow">
               <div class="d-block">
                 <b class="m-2">Возраст:</b>
                 <div class="d-flex">
-                  <input type="number" class="form-control m-2 p-2" style="width: 50px;" disabled value="..." />
-                  <input type="number" class="form-control m-2" style="width: 70px;" placeholder="..." id="changeAge" />
+                  <input type="number" class="form-control m-2 p-2" style="width: 50px;" disabled value="0" />
+                  <input type="number" class="form-control m-2" style="width: 70px;" placeholder="Редактировать"
+                    id="changeAge" />
                 </div>
               </div>
 
               <div class="d-block">
                 <b class="m-2">Кабинет:</b>
                 <div class="d-flex">
-                  <input type="number" class="form-control m-2 p-2" style="width: 100px;" disabled value="..." />
-                  <input type="number" class="form-control m-2" style="width: 100px;" placeholder="..."
+                  <input type="number" class="form-control m-2 p-2" style="width: 100px;" disabled value="0" />
+                  <input type="number" class="form-control m-2" style="width: 100px;" placeholder="Редактировать..."
                     id="changeRoom" />
                 </div>
               </div>
@@ -152,7 +154,7 @@
             <div class="mt-5">
               <b class="m-2">Номер телефона:</b>
               <div class="d-flex">
-                <input type="tel" class="form-control m-2" disabled value="..." />
+                <input type="tel" class="form-control m-2" disabled value="Пусто..." />
                 <input type="tel" class="form-control m-2" placeholder="Редактировать..." id="changeTel" />
               </div>
             </div>
@@ -160,7 +162,7 @@
             <div class="mt-3">
               <b class="m-2">Номер WhatsApp:</b>
               <div class="d-flex">
-                <input type="tel" class="form-control m-2" disabled value="..." />
+                <input type="tel" class="form-control m-2" disabled value="Пусто..." />
                 <input type="tel" class="form-control m-2" placeholder="Редактировать..." id="changeWAppNumber" />
               </div>
             </div>
@@ -169,17 +171,101 @@
               <b class="m-2">Фото:</b>
               <div class="d-block text-center">
                 <img src="" alt="Не найдено..." class="w-50 rounded border m-3">
-                <div>
+                <form>
                   <label for="changeAvatar" class="btn btn-primary w-75" style="cursor: pointer;">Выберите файл</label>
                   <input type="file" class="form-control m-2 p-1 d-none" id="changeAvatar" />
-                </div>
+                </form>
               </div>
             </div>
 
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
-            <button type="button" class="btn btn-primary" id="update">Редактировать</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id="update">Редактировать</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="CREATEteacherModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+      role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><b>Добавление учителя</b></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="d-block">
+              <b>Фамилия:</b>
+              <input class="form-control mb-3" type="text" placeholder="Добавить..." id="createLastName">
+              <b>Имя:</b>
+              <input class="form-control mb-3" type="text" placeholder="Добавить..." id="createFirstName">
+              <b>Отчество:</b>
+              <input class="form-control" type="text" placeholder="Добавить..." id="createPatronymic">
+            </div>
+
+            <div class="mt-4">
+              <b class="m-2">Преподаваемый урок:</b>
+              <div class="d-flex">
+                <input type="text" class="form-control m-2" placeholder="Добавить..." id="createLesson" />
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <b class="m-2">Email:</b>
+              <div class="d-flex">
+                <input type="email" class="form-control m-2" placeholder="Добавить..." id="createEmail" />
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between w-100 mt-4" id="AgeRow">
+              <div class="d-block">
+                <b class="m-2">Возраст:</b>
+                <div class="d-flex">
+                  <input type="number" class="form-control m-2" placeholder="Добавить" id="createAge" />
+                </div>
+              </div>
+
+              <div class="d-block">
+                <b class="m-2">Кабинет:</b>
+                <div class="d-flex">
+                  <input type="number" class="form-control m-2" placeholder="Добавить..." id="createRoom" />
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <b class="m-2">Номер телефона:</b>
+              <div class="d-flex">
+                <input type="tel" class="form-control m-2" placeholder="Добавить..." id="createTel" />
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <b class="m-2">Номер WhatsApp:</b>
+              <div class="d-flex">
+                <input type="tel" class="form-control m-2" placeholder="Добавить..." id="createWAppNumber" />
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <b class="m-2">Фото:</b>
+              <div class="d-block text-center">
+                <img src="" alt="Не найдено..." class="w-50 rounded border m-3">
+                <form>
+                  <label for="changeAvatar" class="btn btn-primary w-75" style="cursor: pointer;">Выберите файл</label>
+                  <input type="file" class="form-control m-2 p-1 d-none" id="createAvatar" />
+                </form>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id="create">Добавить</button>
           </div>
         </div>
       </div>
@@ -187,14 +273,16 @@
   </main>
   <!-- SCRIPTS -->
   <script type="module" src="js/dashboard.js"></script>
-  <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Bootstrap CDN -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
