@@ -59,7 +59,7 @@ function cardTemplateTeachers(firstname, lastname, patronymic, work, imgURL) {
             alt="..." class="rounded-circle" width="150">
           <div class="mt-3">
             <h4>${firstname} ${lastname} ${patronymic}</h4>
-            <p class="mb-0">${work}</p>
+            <p class="mb-0">Преподаваемый урок: ${work}</p>
             <button class="btn btn-danger" id="DELETEteacher">Удалить</button>
             <button class="btn btn-success" id="UPDATEteacher">Подробнее</button>
           </div>
@@ -176,9 +176,7 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
         API.delete('https://parseapi.back4app.com/classes/teachers', (res[index].objectId).split(' ').join(' '))
         e.target.parentElement.parentElement.parentElement.parentElement.remove()
         confirm('Удалено!')
-      }else{
-        confirm('Отменено!')
-      }
+      }else{ confirm('Отменено!') }
     })
   })
 })
@@ -202,18 +200,17 @@ const createBtn = document.querySelector('#create')
 
 // API POST
 createBtn.addEventListener('click', () => {
-  console.log(createFirstName.value);
   API.post('https://parseapi.back4app.com/classes/teachers',
     JSON.stringify({
-      "firstname": createFirstName.value != '' ? createFirstName.value : ' ',
-      "lastname": createLastName.value != '' ? createLastName.value : ' ',
-      "patronymic": createPatronymic.value != '' ? createPatronymic.value : ' ',
-      "age": createAge.value < 0 ? confirm('Ошибка ввода в поле "Возраст"!') : createAge.value != '' ? createAge.value : ' ',
-      "room": createRoom.value < 0 ? confirm('Ошибка ввода в поле "Кабинет"!') : createRoom.value != '' ? createRoom.value : ' ',
-      "phonenumber": createTel.value != '' ? createTel.value : ' ',
-      "whatsnum": createWAppNumber.value != '' ? createWAppNumber.value : ' ',
-      "typeofteacher": createLesson.value != '' ? createLesson.value : ' ',
-      "email": createEmail.value != '' ? createEmail.value : ' '
+      "firstname"     : createFirstName.value != '' ? createFirstName.value : ' ',
+      "lastname"      : createLastName.value != '' ? createLastName.value : ' ',
+      "patronymic"    : createPatronymic.value != '' ? createPatronymic.value : ' ',
+      "age"           : createAge.value < 0 ? confirm('Ошибка ввода в поле "Возраст"!') : createAge.value != '' ? createAge.value : ' ',
+      "room"          : createRoom.value < 0 ? confirm('Ошибка ввода в поле "Кабинет"!') : createRoom.value != '' ? createRoom.value : ' ',
+      "phonenumber"   : createTel.value != '' ? createTel.value : ' ',
+      "whatsnum"      : createWAppNumber.value != '' ? createWAppNumber.value : ' ',
+      "typeofteacher" : createLesson.value != '' ? createLesson.value : ' ',
+      "email"         : createEmail.value != '' ? createEmail.value : ' '
     })
   )
   window.location.reload()
@@ -228,14 +225,14 @@ let newsBlockRow = document.querySelector('#newsBlockRow')
 function cardTemplateNews(title, body, date) {
   newsCard = `
     <div class="col-md-6 p-3">
-        <div class="p-3" style="background-color: rgba(255, 255, 255, 0.75); border-radius: 10px;">
-            <h4><b>${title}</b></h4>
-            <p>${body}</p>
-            <div class='d-lg-flex justify-content-between align-items-end border-0'>
-              <p class='mb-0'><b>Дата: ${date}</b></p>
-              <button class="btn btn-outline-primary">Подробнее</button>
-            </div>
+      <div class="p-3" style="background-color: rgba(255, 255, 255, 0.75); border-radius: 10px;">
+        <h4><b>${title}</b></h4>
+        <p>${body}</p>
+        <div class='d-lg-flex justify-content-between align-items-end border-0'>
+          <p class='mb-0'><b>Дата: ${date}</b></p>
+          <button class="btn btn-outline-primary">Подробнее</button>
         </div>
+      </div>
     </div>
   `
 }

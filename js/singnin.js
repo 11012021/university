@@ -13,15 +13,11 @@
 // LOADER
 let page = document.querySelectorAll('.page');
 let loader = document.querySelector('#loader');
-page.forEach(item => {
-    item.classList.add('onload')
-})
+page.forEach(item => { item.classList.add('onload') })
 loader.classList.add('loader')
 
 window.addEventListener('load', () => {
-    page.forEach(item => {
-        item.classList.remove('onload')
-    })
-    loader.classList.remove('loader')
-    loader.setAttribute('style', 'display: none')
+	page.forEach(item => { item.classList.remove('onload') })
+	loader.classList.remove('loader')
+	loader.setAttribute('style', 'display: none')
 })

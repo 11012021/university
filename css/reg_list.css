@@ -1,70 +1,27 @@
-html,
-body {
-    margin          : 0px;
-    min-width       : 100% !important;
-    min-height      : 100% !important;
-    height          : 100%;
-    background-color: rgb(240, 240, 240) !important;
-    scroll-behavior : smooth !important;
-}
+html, body { margin : 0; width : 100%; height: 100%; background-color: #dae1f0 !important; }
+body::-webkit-scrollbar { width : 12px; height: 12px; }
+body::-webkit-scrollbar-track-piece { background-color: #ddd; }
+body::-webkit-scrollbar-thumb { background-color: #102b72; }
+body::-webkit-scrollbar-corner { background-color: #102b72; }
+header { width : 100%; background-color: #102b72; position : fixed; top : 0px; z-index : 9999;}
+#brand { display: none; }
 
-body::-webkit-scrollbar {
-    width : 12px;
-    height: 12px;
-}
-
-body::-webkit-scrollbar-track-piece {
-    background-color: #ddd;
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: #102b72;
-}
-
-body::-webkit-scrollbar-corner {
-    background-color: #102b72;
-}
-
-header {
-    width           : 100%;
-    background-color: #102b72;
-    position        : fixed;
-    top             : 0px;
-    z-index         : 9999;
-}
-
-#brand {
-    display: none;
-}
-
-.nav-item a {
-    padding: 20px 20px !important;
-    color  : rgb(230, 230, 230) !important;
-}
-
-.nav-item a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.navbar-brand img {
-    width: 200px;
-}
-
+.nav { background-color: #102b72; width : 100%; }
+.nav-item a { padding: 30px 20px !important; color : rgb(230, 230, 230) !important; }
+.nav-item a:hover { background-color: rgba(255, 255, 255, 0.2); }
+.navbar h3 { display: none; }
+.navbar-brand img { width: 84px; }
+.navbar-nav button a { padding: 0px 5px; }
+.navbar-toggler-icon { background: url("/img/menu.png") center/cover !important; }
 .navbar-toggler {
-    border             : none !important;
-    box-shadow         : none !important;
-    transition-property: all !important;
-    transition         : all ease .5s !important;
+  border             : none !important;
+  box-shadow         : none !important;
+  transition-property: all !important;
+  transition         : all ease .5s !important;
+  outline            : none !important;
 }
 
-.navbar-toggler-icon {
-    background: url("/img/menu.png") center/cover !important;
-}
-
-li.align-self-center>a.nav-link {
-    margin-left : 50px;
-    margin-right: 50px;
-}
+li.align-self-center>a.nav-link { margin-left : 50px; margin-right: 50px; }
 
 .schedule_div .col-md-3 {
     background-color: #fff;
@@ -83,125 +40,44 @@ li.align-self-center>a.nav-link {
 }
 
 /* NEWS */
+.date { text-align: right; }
+.news_div h1 { font-weight : 400; border-bottom : 3px solid #000; background-color: rgba(255, 255, 255, 0.25) }
 .news_div {
-    background-attachment: fixed;
+    background-attachment: fixed; background-position : center; background-size : cover; background-repeat : no-repeat;
     background-image     : url('https://cdn.pixabay.com/photo/2016/03/26/13/12/pencils-1280558_960_720.jpg');
-    background-position  : center;
-    background-size      : cover;
-    background-repeat    : no-repeat;
-}
-
-.news_div h1 {
-    font-weight     : 400;
-    border-bottom   : 3px solid #000;
-    background-color: rgba(255, 255, 255, 0.25)
-}
-
-.date {
-    text-align: right;
 }
 
 /* teachers */
 .teachers {
-    background-attachment: fixed;
+    background-attachment: fixed; background-position : center; background-size : cover; background-repeat : no-repeat;
     background-image     : url('https://cdn.pixabay.com/photo/2015/09/09/19/29/bookshelves-932780_960_720.jpg');
-    background-position  : center;
-    background-size      : cover;
-    background-repeat    : no-repeat;
 }
 
-/* https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_960_720.jpg */
-/* https://cdn.pixabay.com/photo/2016/10/08/10/50/tu-delft-1723434_960_720.jpg */
+.teachers h1 { font-weight : 400; color : #fff; border-bottom : 5px solid #fff; background-color: rgba(0, 0, 0, 0.75) }
+.teachers .card { border: none !important; }
+.teachers p { margin: 0px; }
+.teachers button { margin-top: 20px; }
+.teachers img { width : 200px !important; border-radius: 100vh; margin-bottom: 20px; }
+#teachersBlock>div:nth-child(1)>div>img { transition-property: all !important; transition : all ease .5s !important; }
+#teachersBlock #fullname { padding: 0 20px; }
+.teachers .col-sm-12>div { border-radius: 5px; padding-top  : 20px;}
+.teachers button { height: 50px; }
+.main_txt { width : 100%; background-color: white; text-align: center; padding : 5px; margin-bottom : 5px; margin-top : 10px; }
 
-.teachers h1 {
-    font-weight     : 400;
-    color           : #fff;
-    border-bottom   : 5px solid #fff;
-    background-color: rgba(0, 0, 0, 0.75)
-}
-
-.teachers .card {
-    border: none !important;
-}
-
-.teachers p {
-    margin: 0px;
-}
-
-.teachers button {
-    margin-top: 20px;
-}
-
-.teachers img {
-    width        : 200px !important;
-    border-radius: 100vh;
-    margin-bottom: 20px;
-}
-
-#teachersBlock>div:nth-child(1)>div>img {
-    transition-property: all !important;
-    transition         : all ease .5s !important;
-}
-
-#teachersBlock #fullname {
-    padding: 0 20px;
-}
-
-.teachers .col-sm-12>div {
-    border-radius: 5px;
-    padding-top  : 20px;
-}
-
-.teachers button {
-    height: 50px;
-}
-
-.main_txt {
-    width           : 100%;
-    background-color: white;
-    text-align      : center;
-    padding         : 5px;
-    margin-bottom   : 5px;
-    margin-top      : 10px;
-}
-
+/* MEDIA */
 @media screen and (max-width: 991px) {
-    #brand {
-        display: initial;
-        color  : #fff !important;
-        padding: 10px;
-    }
-
-    #brand a {
-        color          : #fff;
-        text-decoration: none;
-    }
-
-    .schedule_div .col-md-3 button {
-        font-size: 14px !important;
-        height   : 50px;
-    }
-
-    #fullname {
-        padding: 0px 0px !important;
-    }
+    #brand { display: initial; color : #fff !important; padding: 10px; }
+    #brand a { color : #fff; text-decoration: none; }
+    .schedule_div .col-md-3 button { font-size: 14px !important; height : 50px; }
+    #fullname { padding: 0px 0px !important; }
 }
-
 
 /* LOADER */
-.onload {
-    display: none !important;
-}
-
+.loader img { width : 20vh; justify-self: center; align-items : center; }
+.onload { display: none !important; }
 .loader {
-    height         : 100% !important;
-    display        : flex;
-    justify-content: center;
-    align-items    : center;
-}
-
-.loader img {
-    width       : 20vh;
-    justify-self: center;
-    align-items : center;
+  height         : 100%;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
 }
