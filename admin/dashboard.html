@@ -49,7 +49,10 @@
 
     <section id="tbot"></section>
     <div class="news" id="newsBlock" style="display: none;">
-      <div class="container"><div class="row" id="newsBlockRow"></div></div>
+      <button type="button" class="btn btn-primary" data-dismiss="modal" id="createNews">Добавить новость</button>
+      <div class="container">
+        <div class="row" id="newsBlockRow"></div>
+      </div>
     </div>
 
     <div class="schedule" id="scheduleBlock" style="display: none;">
@@ -103,9 +106,12 @@
           <div class="modal-body">
             <div class="d-block">
               <b>Ф.И.О:</b><input class="form-control mb-3" type="text" disabled value="Пусто...">
-              <b>Фамилия:</b><input class="form-control mb-3" type="text" placeholder="Редактировать..." id="changeLastName">
-              <b>Имя:</b><input class="form-control mb-3" type="text" placeholder="Редактировать..." id="changeFirstName">
-              <b>Отчество:</b><input class="form-control" type="text" placeholder="Редактировать..." id="changePatronymic">
+              <b>Фамилия:</b><input class="form-control mb-3" type="text" placeholder="Редактировать..."
+                id="changeLastName">
+              <b>Имя:</b><input class="form-control mb-3" type="text" placeholder="Редактировать..."
+                id="changeFirstName">
+              <b>Отчество:</b><input class="form-control" type="text" placeholder="Редактировать..."
+                id="changePatronymic">
             </div>
             <div class="mt-5">
               <b class="m-2">Преподаваемый урок:</b>
@@ -242,6 +248,45 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
             <button type="button" class="btn btn-primary" data-dismiss="modal" id="create">Добавить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="newsModal" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><b>Новость</b></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <b>Заголовок:</b>
+              <div class="d-block">
+                <input type="text" class="form-control mt-3" readonly value="Пусто..." />
+                <input type="text" class="form-control mt-3" placeholder="Редактировать..."
+                  id="changeNewsTitle" />
+              </div>
+            </div>
+            <div class="mt-5">
+              <b>Новость:</b>
+              <div class="d-block">
+                <textarea readonly class="form-control mt-3 w-100" style="height: 20vh;"
+                  placeholder="Пусто..."></textarea>
+                <textarea class="form-control mt-3 mb-4 w-100" id="changeNewsPlchldr"
+                  placeholder="Редактировать..." style="height: 20vh;"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer d-block text-right">
+            <div class="text-center text-sm-right"><button type="button" class="btn btn-primary" data-dismiss="modal" id="updateNews">Редактировать</button></div>
+            <div class="d-inline-flex">
+              <button type="button" class="btn btn-danger" data-dismiss="modal" id="delNews">Удалить</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+            </div>
           </div>
         </div>
       </div>

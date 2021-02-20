@@ -82,6 +82,7 @@ main { padding-top : 80px; padding-left : 300px; padding-right: 30px; }
   #AgeRow { display: block !important; }
   #AgeRow input { width: 100% !important; }
   #AgeRow>div { margin-bottom: 2em; }
+  main { padding-left : 10px; padding-right: 10px; }
 }
 
 @media (max-width: 375px) { .schedule_div .row div { margin: 20px 0px; } }
