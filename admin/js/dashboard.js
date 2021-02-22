@@ -90,7 +90,7 @@ function cardTemplateTeachers(firstname, lastname, patronymic, work, imgURL) {
         <div class="d-flex flex-column align-items-center text-center">
           <img src="${imgURL}" alt="..." class="rounded-circle" width="150">
           <div class="mt-3">
-            <h4>${firstname} ${lastname} ${patronymic}</h4>
+            <h4>${lastname} ${firstname} ${patronymic}</h4>
             <p class="mb-0">Преподаваемый урок: ${work}</p>
             <button class="btn btn-success" id="UPDATEteacher">Подробнее</button>
             <button class="btn btn-danger" id="DELETEteacher">Удалить</button>
@@ -124,9 +124,9 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
   let objId = []
 
   res.forEach(item => {
-    objId.push(item.objectId)
+    objId.unshift(item.objectId)
     cardTemplateTeachers(item.firstname, item.lastname, item.patronymic, item.typeofteacher, item.photo.url)
-    arr.unshift(teacherCard)
+    arr.push(teacherCard)
   })
 
   arr.forEach(elem => {
@@ -199,21 +199,21 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
 // API PUT MODAL TEACHERS
 
 
-// API DELETE
+// API DELETE TEACHERS
 API.get('https://parseapi.back4app.com/classes/teachers', res => {
   let delTchrBtns = document.querySelectorAll('#DELETEteacher');
   delTchrBtns.forEach((btn, index) => {
     btn.addEventListener('click', e => {
       let warn = prompt('Ввеите "УДАЛИТЬ" для подтверждения действия!')
       if (warn == "УДАЛИТЬ") {
-        API.delete('https://parseapi.back4app.com/classes/teachers', (res[index].objectId).split(' ').join(' '))
+        API.delete('https://parseapi.back4app.com/classes/teachers', res[index].objectId)
         e.target.parentElement.parentElement.parentElement.parentElement.remove()
         confirm('Удалено!')
       } else { confirm('Отменено!') }
     })
   })
 })
-// API DELETE
+// API DELETE TEACHERS
 
 
 // MODAL WINDOW CREATE INPUTS
@@ -273,17 +273,18 @@ function cardTemplateNews(title, body, date) {
   `
 }
 
+
+let changeNewsTitle   = document.querySelector('#changeNewsTitle')
+let changeNewsPlchldr = document.querySelector('#changeNewsPlchldr')
 API.get('https://parseapi.back4app.com/classes/news', res => {
   let newsModal         = document.querySelector('#newsModal')
-  let changeNewsTitle   = document.querySelector('#changeNewsTitle')
-  let changeNewsPlchldr = document.querySelector('#changeNewsPlchldr')
   let idArray           = []
 
   res.forEach((item) => {
-    let date = new Date(item.createdAt).toLocaleString()
+    idArray.unshift(item.objectId)
+    let date = new Date(item.createdAt).toLocaleDateString()
     cardTemplateNews(item.title, item.body, date)
     newsBlockRow.insertAdjacentHTML('afterbegin', newsCard)
-    idArray.push(item.objectId)
   })
 
   let newsModalBtn = document.querySelectorAll('#newsModalBtn')
@@ -291,10 +292,11 @@ API.get('https://parseapi.back4app.com/classes/news', res => {
   newsModalBtn.forEach((btn, index) => {
     btn.setAttribute('data-target', `#${idArray[index]}`)
     btn.setAttribute('data-toggle', 'modal')
+
     btn.addEventListener('click', () => {
+      newsModal.id  = idArray[index]
       let TITLE     = changeNewsTitle.previousElementSibling
       let TEXTAREA  = changeNewsPlchldr.previousElementSibling
-      newsModal.id  = idArray[index]
 
       res.forEach(item => {
         if (idArray[index] == item.objectId) {
@@ -309,20 +311,16 @@ API.get('https://parseapi.back4app.com/classes/news', res => {
 
 
 // UPDATE TEACHERS
-API.get('https://parseapi.back4app.com/classes/new', res => {
+API.get('https://parseapi.back4app.com/classes/news', res => {
   let updateNews = document.querySelector('#updateNews')
-
-  // console.log(updateNews.parentElement.parentElement.previousElementSibling.firstElementChild);
-
+  let newsModal  = document.querySelector('#newsModal')
   res.forEach(item => {
-    updateNews.addEventListener('click', (e) => {
-      console.log(e.target);
-      if (item.objectId == e.target.parentElement.parentElement.parentElement.parentElement.id) {
-        console.log('SUCC!');
-        API.put('https://parseapi.back4app.com/classes/teachers', item.objectId,
+    updateNews.addEventListener('click', () => {
+      if (item.objectId == newsModal.id) {
+        API.put('https://parseapi.back4app.com/classes/news', item.objectId,
           JSON.stringify({
-            "title": '',
-            "body": ''
+            "title" : changeNewsTitle.value != '' ? changeNewsTitle.value : item.title,
+            "body"  : changeNewsPlchldr.value != '' ? changeNewsPlchldr.value : item.body
           })
         )
         window.location.reload()
@@ -331,3 +329,35 @@ API.get('https://parseapi.back4app.com/classes/new', res => {
   })
 })
 // UPDATE TEACHERS
+
+
+// API DELETE NEWS
+API.get('https://parseapi.back4app.com/classes/news', res => {
+  let delNews = document.querySelectorAll('#delNews');
+  delNews.forEach((btn, index) => {
+    btn.addEventListener('click', e => {
+      let warn = prompt('Ввеите "УДАЛИТЬ" для подтверждения действия!')
+      if (warn == "УДАЛИТЬ") {
+        console.log(res[index].objectId);
+        API.delete('https://parseapi.back4app.com/classes/new', res[index].objectId)
+        e.target.parentElement.parentElement.parentElement.parentElement.remove()
+        confirm('Удалено!')
+      } else { confirm('Отменено!') }
+    })
+  })
+})
+// API DELETE NEWS
+
+
+// API CREATE NEWS
+let createNews = document.querySelector('#createNews')
+createNews.addEventListener('click', () => {
+  API.post('https://parseapi.back4app.com/classes/news',
+    JSON.stringify({
+      "title"     : changeNewsTitle.value != '' ? changeNewsTitle.value : ' ',
+      "body"      : changeNewsPlchldr.value != '' ? changeNewsPlchldr.value : ' '
+    })
+  )
+  window.location.reload()
+})
+// API CREATE NEWS
