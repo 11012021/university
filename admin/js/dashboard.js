@@ -133,7 +133,7 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
     teachersBlockRow.insertAdjacentHTML('afterbegin', elem)
   })
 
-  let modal           = document.querySelector('.modal')
+  let modal           = document.querySelector('#teacherModal')
   let updateTchrsBtns = document.querySelectorAll('#UPDATEteacher');
 
   updateTchrsBtns.forEach((btn, index) => {
@@ -292,9 +292,9 @@ API.get('https://parseapi.back4app.com/classes/news', res => {
   newsModalBtn.forEach((btn, index) => {
     btn.setAttribute('data-target', `#${idArray[index]}`)
     btn.setAttribute('data-toggle', 'modal')
-
     btn.addEventListener('click', () => {
       newsModal.id  = idArray[index]
+
       let TITLE     = changeNewsTitle.previousElementSibling
       let TEXTAREA  = changeNewsPlchldr.previousElementSibling
 
@@ -307,13 +307,13 @@ API.get('https://parseapi.back4app.com/classes/news', res => {
     })
   })
 })
-// READ TEACHERS
+// READ NEWS
 
 
-// UPDATE TEACHERS
+// UPDATE NEWS
+let updateNews = document.querySelector('#updateNews')
+let newsModal  = document.querySelector('#newsModal')
 API.get('https://parseapi.back4app.com/classes/news', res => {
-  let updateNews = document.querySelector('#updateNews')
-  let newsModal  = document.querySelector('#newsModal')
   res.forEach(item => {
     updateNews.addEventListener('click', () => {
       if (item.objectId == newsModal.id) {
@@ -323,12 +323,12 @@ API.get('https://parseapi.back4app.com/classes/news', res => {
             "body"  : changeNewsPlchldr.value != '' ? changeNewsPlchldr.value : item.body
           })
         )
-        window.location.reload()
+        // window.location.reload()
       }
     })
   })
 })
-// UPDATE TEACHERS
+// UPDATE NEWS
 
 
 // API DELETE NEWS
@@ -336,12 +336,14 @@ API.get('https://parseapi.back4app.com/classes/news', res => {
   let delNews = document.querySelectorAll('#delNews');
   delNews.forEach((btn, index) => {
     btn.addEventListener('click', e => {
+      console.log(e.target);
       let warn = prompt('Ввеите "УДАЛИТЬ" для подтверждения действия!')
       if (warn == "УДАЛИТЬ") {
         console.log(res[index].objectId);
-        API.delete('https://parseapi.back4app.com/classes/new', res[index].objectId)
-        e.target.parentElement.parentElement.parentElement.parentElement.remove()
+        API.delete('https://parseapi.back4app.com/classes/news', res[index].objectId)
+        // e.target.parentElement.parentElement.parentElement.parentElement.remove()
         confirm('Удалено!')
+        window.location.reload()
       } else { confirm('Отменено!') }
     })
   })

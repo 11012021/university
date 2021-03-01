@@ -49,7 +49,7 @@
 
     <section id="tbot"></section>
     <div class="news" id="newsBlock" style="display: none;">
-      <button type="button" class="btn btn-primary" data-target="#createNewsModal" data-toggle="modal">Добавить
+      <button type="button" class="btn btn-primary" id="createNews" data-target="#createNewsModal" data-toggle="modal">Добавить
         новость</button>
       <div class="container">
         <div class="row" id="newsBlockRow"></div>
@@ -95,7 +95,7 @@
       </nav>
     </div>
 
-    <div class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="teacherModal" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
@@ -107,25 +107,25 @@
           <div class="modal-body">
             <div class="d-block">
               <b>Ф.И.О:</b><input class="form-control mb-3" type="text" disabled value="Пусто...">
-              <b>Фамилия:</b><input class="form-control mb-3" type="text" placeholder="Редактировать..."
+              <b>Фамилия:</b><input class="form-control mb-3" type="text" autocomplete="off" placeholder="Редактировать..."
                 id="changeLastName">
-              <b>Имя:</b><input class="form-control mb-3" type="text" placeholder="Редактировать..."
+              <b>Имя:</b><input class="form-control mb-3" type="text" autocomplete="off" placeholder="Редактировать..."
                 id="changeFirstName">
-              <b>Отчество:</b><input class="form-control" type="text" placeholder="Редактировать..."
+              <b>Отчество:</b><input class="form-control" type="text" autocomplete="off" placeholder="Редактировать..."
                 id="changePatronymic">
             </div>
             <div class="mt-5">
               <b class="m-2">Преподаваемый урок:</b>
               <div class="d-flex">
                 <input type="text" class="form-control m-2" disabled value="Пусто..." />
-                <input type="text" class="form-control m-2" placeholder="Редактировать..." id="changeLesson" />
+                <input type="text" class="form-control m-2" autocomplete="off" placeholder="Редактировать..." id="changeLesson" />
               </div>
             </div>
             <div class="mt-5">
               <b class="m-2">Email:</b>
               <div class="d-flex">
                 <input type="email" class="form-control m-2" disabled value="Пусто..." />
-                <input type="email" class="form-control m-2" placeholder="Редактировать..." id="changeEmail" />
+                <input type="email" class="form-control m-2" autocomplete="off" placeholder="Редактировать..." id="changeEmail" />
               </div>
             </div>
             <div class="d-flex justify-content-between w-100 mt-5" id="AgeRow">
@@ -134,7 +134,7 @@
                 <div class="d-flex">
                   <input type="number" class="form-control w-100 m-2 p-2" style="width: 50px;" disabled value="0" />
                   <input type="number" class="form-control w-100 m-2" style="width: 70px;" placeholder="Редактировать"
-                    id="changeAge" />
+                    id="changeAge" autocomplete="off" />
                 </div>
               </div>
               <div class="d-block w-100">
@@ -142,7 +142,7 @@
                 <div class="d-flex">
                   <input type="number" class="form-control w-100 m-2 p-2" style="width: 100px;" disabled value="0" />
                   <input type="number" class="form-control w-100 m-2" style="width: 100px;" placeholder="Редактировать..."
-                    id="changeRoom" />
+                    id="changeRoom" autocomplete="off" />
                 </div>
               </div>
             </div>
@@ -150,14 +150,14 @@
               <b class="m-2">Номер телефона:</b>
               <div class="d-flex">
                 <input type="tel" class="form-control m-2" disabled value="Пусто..." />
-                <input type="tel" class="form-control m-2" placeholder="Редактировать..." id="changeTel" />
+                <input type="tel" class="form-control m-2" autocomplete="off" placeholder="Редактировать..." id="changeTel" />
               </div>
             </div>
             <div class="mt-3">
               <b class="m-2">Номер WhatsApp:</b>
               <div class="d-flex">
                 <input type="tel" class="form-control m-2" disabled value="Пусто..." />
-                <input type="tel" class="form-control m-2" placeholder="Редактировать..." id="changeWAppNumber" />
+                <input type="tel" class="form-control m-2" autocomplete="off" placeholder="Редактировать..." id="changeWAppNumber" />
               </div>
             </div>
             <div class="mt-5">
@@ -191,46 +191,46 @@
           </div>
           <div class="modal-body">
             <div class="d-block">
-              <b>Фамилия:</b><input class="form-control mb-3" type="text" placeholder="Добавить..." id="createLastName">
-              <b>Имя:</b><input class="form-control mb-3" type="text" placeholder="Добавить..." id="createFirstName">
-              <b>Отчество:</b><input class="form-control" type="text" placeholder="Добавить..." id="createPatronymic">
+              <b>Фамилия:</b><input class="form-control mb-3" type="text" autocomplete="off" placeholder="Добавить..." id="createLastName">
+              <b>Имя:</b><input class="form-control mb-3" type="text" autocomplete="off" placeholder="Добавить..." id="createFirstName">
+              <b>Отчество:</b><input class="form-control" type="text" autocomplete="off" placeholder="Добавить..." id="createPatronymic">
             </div>
             <div class="mt-4">
               <b class="m-2">Преподаваемый урок:</b>
               <div class="d-flex">
-                <input type="text" class="form-control m-2" placeholder="Добавить..." id="createLesson" />
+                <input type="text" class="form-control m-2" autocomplete="off" placeholder="Добавить..." id="createLesson" />
               </div>
             </div>
             <div class="mt-4">
               <b class="m-2">Email:</b>
               <div class="d-flex">
-                <input type="email" class="form-control m-2" placeholder="Добавить..." id="createEmail" />
+                <input type="email" class="form-control m-2" autocomplete="off" placeholder="Добавить..." id="createEmail" />
               </div>
             </div>
             <div class="d-flex justify-content-between w-100 mt-4" id="AgeRow">
               <div class="d-block">
                 <b class="m-2">Возраст:</b>
                 <div class="d-flex">
-                  <input type="number" class="form-control m-2" placeholder="Добавить" id="createAge" />
+                  <input type="number" class="form-control m-2" autocomplete="off" placeholder="Добавить" id="createAge" />
                 </div>
               </div>
               <div class="d-block">
                 <b class="m-2">Кабинет:</b>
                 <div class="d-flex">
-                  <input type="number" class="form-control m-2" placeholder="Добавить..." id="createRoom" />
+                  <input type="number" class="form-control m-2" autocomplete="off" placeholder="Добавить..." id="createRoom" />
                 </div>
               </div>
             </div>
             <div class="mt-4">
               <b class="m-2">Номер телефона:</b>
               <div class="d-flex">
-                <input type="tel" class="form-control m-2" placeholder="Добавить..." id="createTel" />
+                <input type="tel" class="form-control m-2" autocomplete="off" placeholder="Добавить..." id="createTel" />
               </div>
             </div>
             <div class="mt-4">
               <b class="m-2">Номер WhatsApp:</b>
               <div class="d-flex">
-                <input type="tel" class="form-control m-2" placeholder="Добавить..." id="createWAppNumber" />
+                <input type="tel" class="form-control m-2" autocomplete="off" placeholder="Добавить..." id="createWAppNumber" />
               </div>
             </div>
 
@@ -268,7 +268,7 @@
               <b>Заголовок:</b>
               <div class="d-block">
                 <input type="text" class="form-control mt-3" readonly value="Пусто..." />
-                <input type="text" class="form-control mt-3" placeholder="Редактировать..." id="changeNewsTitle" />
+                <input type="text" class="form-control mt-3" autocomplete="off" placeholder="Редактировать..." id="changeNewsTitle" />
               </div>
             </div>
             <div class="mt-5">
@@ -276,7 +276,7 @@
               <div class="d-block">
                 <textarea readonly class="form-control mt-3 w-100" style="height: 20vh;"
                   placeholder="Пусто..."></textarea>
-                <textarea class="form-control mt-3 mb-4 w-100" id="changeNewsPlchldr" placeholder="Редактировать..."
+                <textarea class="form-control mt-3 mb-4 w-100" autocomplete="off" id="changeNewsPlchldr" placeholder="Редактировать..."
                   style="height: 20vh;"></textarea>
               </div>
             </div>
@@ -293,7 +293,7 @@
       </div>
     </div>
 
-    <div class="modal fade" id="createNewsModal" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- <div class="modal fade" id="createNewsModal" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
@@ -306,13 +306,13 @@
             <div>
               <b>Заголовок:</b>
               <div class="d-block">
-                <input type="text" class="form-control mt-3" placeholder="Редактировать..." id="createNewsTitle" />
+                <input type="text" class="form-control mt-3" autocomplete="off" placeholder="Редактировать..." id="createNewsTitle" />
               </div>
             </div>
             <div class="mt-5">
               <b>Новость:</b>
               <div class="d-block">
-                <textarea class="form-control mt-3 mb-4 w-100" id="createNewsPlchldr" placeholder="Редактировать..."
+                <textarea class="form-control mt-3 mb-4 w-100" autocomplete="off" id="createNewsPlchldr" placeholder="Редактировать..."
                   style="height: 20vh;"></>
               </div>
             </div>
@@ -325,7 +325,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </main>
 
   <script type="module" src="js/dashboard.js"></script>
