@@ -9,24 +9,30 @@ let lastUser;
 
 get_btn.addEventListener('click', () => {
 	API.get('https://parseapi.back4app.com/classes/teachers', res => {
-		console.log('GET response:', res);
-		lastUser = res[res.length - 1].objectId
-		console.log('lastUserId:', lastUser);
+		if(res != undefined){
+			console.log('GET response:', res);
+			lastUser = res[res.length - 1].objectId
+			console.log('lastUserId:', lastUser);
+		}else if(res == undefined){
+			document.body.insertAdjacentHTML('beforeend', `
+				<h1 style="color: red">response ${res} (проверь ограничения класса в back4app)</h1>
+			`)
+		}
 	})
 })
 
 post_btn.addEventListener('click', () => {
 	API.post('https://parseapi.back4app.com/classes/teachers',
 		JSON.stringify({
-			"firstname"			: "",
-			"lastname"			: "",
-			"patronymic"		: "",
-			"age"						: "",
-			"phonenumber"		: "",
-			"whatsnum"			: "",
-			"typeofteacher"	: "",
-			"email"					: "",
-			"room"					: ""
+			"firstname"			: " ",
+			"lastname"			: " ",
+			"patronymic"		: " ",
+			"age"						: " ",
+			"phonenumber"		: " ",
+			"whatsnum"			: " ",
+			"typeofteacher"	: " ",
+			"email"					: " ",
+			"room"					: " "
 		})
 	)
 })

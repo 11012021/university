@@ -180,7 +180,7 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
             "firstname"     : changeFirstName.value != '' ? changeFirstName.value : item.firstname,
             "lastname"      : changeLastName.value != '' ? changeLastName.value : item.lastname,
             "patronymic"    : changePatronymic.value != '' ? changePatronymic.value : item.patronymic,
-            "age"           : createAge.value < 0 ? confirm('Ошибка ввода в поле "Возраст"!') : createAge.value != '' ? createAge.value : (item.age, confirm('Значения остались изначальными!')),
+            "age"           : createAge.value < 0 ? confirm('Ошибка ввода в поле "Возраст"!') : createAge.value != '' ? createAge.value : item.age,
             "email"         : changeEmail.value != '' ? changeEmail.value : item.email,
             "typeofteacher" : changeLesson.value != '' ? changeLesson.value : item.typeofteacher,
             "room"          : createRoom.value < 0 ? confirm('Ошибка ввода в поле "Кабинет"!') : createRoom.value != '' ? createRoom.value : item.room,
@@ -257,7 +257,7 @@ let newsCard      = ''
 let newsBlockRow  = document.querySelector('#newsBlockRow')
 {/* <button class="btn btn-primary" data-target="#newsModalBtn" data-toggle="modal">Новость</button> */ }
 
-// READ TEACHERS
+// READ NEWS
 function cardTemplateNews(title, body, date) {
   newsCard = `
     <div class="col-md-6 p-3">

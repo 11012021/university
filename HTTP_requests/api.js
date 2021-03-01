@@ -1,6 +1,6 @@
 function callAPI() {
-	const ApplicationID = 'Sbmh1dqC6y29EhgLdXZsC0UfuG5Ij5LZqTXgmgWz',
-		ApiKey = 'igRmoVIOsA7YH0O31rB3nSkrE7dxMLu0VVHa6rVy';
+	const ApplicationID = 'OCFWE5r3xskeuQpVGhoKINmNi8w9qN1BO0JBL4VU',
+		ApiKey = 'mUi85dEsMS5B4A6cw5kRVgDlC1WmsMbu8XQv61CP';
 
 	return {
 		get: function (URL, func) {
