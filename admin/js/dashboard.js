@@ -2,12 +2,12 @@ import { API } from '../../HTTP_requests/api.js';
 
 
 // Navigation buttons
-let newsBtn       = document.querySelectorAll('#news_btn');
-let teachersBtn   = document.querySelectorAll('#teachers_btn');
-let scheduleBtn   = document.querySelectorAll('#schedule_btn');
+let newsBtn = document.querySelectorAll('#news_btn');
+let teachersBtn = document.querySelectorAll('#teachers_btn');
+let scheduleBtn = document.querySelectorAll('#schedule_btn');
 
 let teachersBlock = document.getElementById('teachersBlock')
-let newsBlock     = document.getElementById('newsBlock')
+let newsBlock = document.getElementById('newsBlock')
 let scheduleBlock = document.getElementById('scheduleBlock')
 // Navigation buttons
 
@@ -18,21 +18,21 @@ window.addEventListener('load', () => {
 
   if (localStorage.getItem('newsPageState') == 'null') {
     newsBtn.forEach(() => {
-      teachersBlock.setAttribute    ('style', localStorage.getItem('teachersPageState').slice(1, -1))
-      scheduleBlock.setAttribute    ('style', localStorage.getItem('schedulePageState').slice(1, -1))
-      newsBlock.removeAttribute     ('style')
+      teachersBlock.setAttribute('style', localStorage.getItem('teachersPageState').slice(1, -1))
+      scheduleBlock.setAttribute('style', localStorage.getItem('schedulePageState').slice(1, -1))
+      newsBlock.removeAttribute('style')
     })
   } else if (localStorage.getItem('teachersPageState') == 'null') {
     teachersBtn.forEach(() => {
-      newsBlock.setAttribute        ('style', localStorage.getItem('newsPageState').slice(1, -1))
-      scheduleBlock.setAttribute    ('style', localStorage.getItem('schedulePageState').slice(1, -1))
-      teachersBlock.removeAttribute ('style')
+      newsBlock.setAttribute('style', localStorage.getItem('newsPageState').slice(1, -1))
+      scheduleBlock.setAttribute('style', localStorage.getItem('schedulePageState').slice(1, -1))
+      teachersBlock.removeAttribute('style')
     })
   } else if (localStorage.getItem('schedulePageState') == 'null') {
     scheduleBtn.forEach(() => {
-      teachersBlock.setAttribute    ('style', localStorage.getItem('teachersPageState').slice(1, -1))
-      newsBlock.setAttribute        ('style', localStorage.getItem('newsPageState').slice(1, -1))
-      scheduleBlock.removeAttribute ('style')
+      teachersBlock.setAttribute('style', localStorage.getItem('teachersPageState').slice(1, -1))
+      newsBlock.setAttribute('style', localStorage.getItem('newsPageState').slice(1, -1))
+      scheduleBlock.removeAttribute('style')
     })
   }
 })
@@ -44,9 +44,9 @@ newsBtn.forEach(btn => {
   btn.addEventListener('click', () => {
     teachersBlock.setAttribute('style', 'display: none')
     scheduleBlock.setAttribute('style', 'display: none')
-    newsBlock.removeAttribute ('style')
+    newsBlock.removeAttribute('style')
 
-    localStorage.setItem('newsPageState',     JSON.stringify(newsBlock.getAttribute('style')))
+    localStorage.setItem('newsPageState', JSON.stringify(newsBlock.getAttribute('style')))
     localStorage.setItem('teachersPageState', JSON.stringify(teachersBlock.getAttribute('style')))
     localStorage.setItem('schedulePageState', JSON.stringify(scheduleBlock.getAttribute('style')))
   })
@@ -54,11 +54,11 @@ newsBtn.forEach(btn => {
 
 teachersBtn.forEach(btn => {
   btn.addEventListener('click', () => {
-    newsBlock.setAttribute        ('style', 'display: none')
-    scheduleBlock.setAttribute    ('style', 'display: none')
-    teachersBlock.removeAttribute ('style')
+    newsBlock.setAttribute('style', 'display: none')
+    scheduleBlock.setAttribute('style', 'display: none')
+    teachersBlock.removeAttribute('style')
 
-    localStorage.setItem('newsPageState',     JSON.stringify(newsBlock.getAttribute('style')))
+    localStorage.setItem('newsPageState', JSON.stringify(newsBlock.getAttribute('style')))
     localStorage.setItem('teachersPageState', JSON.stringify(teachersBlock.getAttribute('style')))
     localStorage.setItem('schedulePageState', JSON.stringify(scheduleBlock.getAttribute('style')))
   })
@@ -66,11 +66,11 @@ teachersBtn.forEach(btn => {
 
 scheduleBtn.forEach(btn => {
   btn.addEventListener('click', () => {
-    teachersBlock.setAttribute    ('style', 'display: none')
-    newsBlock.setAttribute        ('style', 'display: none')
-    scheduleBlock.removeAttribute ('style')
+    teachersBlock.setAttribute('style', 'display: none')
+    newsBlock.setAttribute('style', 'display: none')
+    scheduleBlock.removeAttribute('style')
 
-    localStorage.setItem('newsPageState',     JSON.stringify(newsBlock.getAttribute('style')))
+    localStorage.setItem('newsPageState', JSON.stringify(newsBlock.getAttribute('style')))
     localStorage.setItem('teachersPageState', JSON.stringify(teachersBlock.getAttribute('style')))
     localStorage.setItem('schedulePageState', JSON.stringify(scheduleBlock.getAttribute('style')))
   })
@@ -104,17 +104,17 @@ function cardTemplateTeachers(firstname, lastname, patronymic, work, imgURL) {
 
 
 // MODAL WINDOW CHANGE INPUTS
-const changeLastName    = document.querySelector('#changeLastName')
-const changeFirstName   = document.querySelector('#changeFirstName')
-const changePatronymic  = document.querySelector('#changePatronymic')
-const changeLesson      = document.querySelector('#changeLesson')
-const changeAge         = document.querySelector('#changeAge')
-const changeRoom        = document.querySelector('#changeRoom')
-const changeTel         = document.querySelector('#changeTel')
-const changeWAppNumber  = document.querySelector('#changeWAppNumber')
-const changeEmail       = document.querySelector('#changeEmail')
-const changeAvatar      = document.querySelector('#changeAvatar')
-const updateBtn         = document.querySelector('#update')
+const changeLastName = document.querySelector('#changeLastName')
+const changeFirstName = document.querySelector('#changeFirstName')
+const changePatronymic = document.querySelector('#changePatronymic')
+const changeLesson = document.querySelector('#changeLesson')
+const changeAge = document.querySelector('#changeAge')
+const changeRoom = document.querySelector('#changeRoom')
+const changeTel = document.querySelector('#changeTel')
+const changeWAppNumber = document.querySelector('#changeWAppNumber')
+const changeEmail = document.querySelector('#changeEmail')
+const changeAvatar = document.querySelector('#changeAvatar')
+const updateBtn = document.querySelector('#update')
 // MODAL WINDOW CHANGE INPUTS
 
 
@@ -133,7 +133,7 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
     teachersBlockRow.insertAdjacentHTML('afterbegin', elem)
   })
 
-  let modal           = document.querySelector('#teacherModal')
+  let modal = document.querySelector('#teacherModal')
   let updateTchrsBtns = document.querySelectorAll('#UPDATEteacher');
 
   updateTchrsBtns.forEach((btn, index) => {
@@ -141,25 +141,25 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
     btn.setAttribute('data-toggle', 'modal')
 
     btn.addEventListener('click', () => {
-      let FIO     = changeLastName.previousElementSibling.previousElementSibling;
-      let LESSON  = changeLesson.previousElementSibling
-      let AGE     = changeAge.previousElementSibling
-      let ROOM    = changeRoom.previousElementSibling
-      let TEL     = changeTel.previousElementSibling
-      let WAPP    = changeWAppNumber.previousElementSibling
-      let AVATAR  = changeAvatar.parentElement.previousElementSibling
-      let EMAIL   = changeEmail.previousElementSibling
+      let FIO = changeLastName.previousElementSibling.previousElementSibling;
+      let LESSON = changeLesson.previousElementSibling
+      let AGE = changeAge.previousElementSibling
+      let ROOM = changeRoom.previousElementSibling
+      let TEL = changeTel.previousElementSibling
+      let WAPP = changeWAppNumber.previousElementSibling
+      let AVATAR = changeAvatar.parentElement.previousElementSibling
+      let EMAIL = changeEmail.previousElementSibling
 
       modal.id = objId[index]
       res.forEach(item => {
         if (objId[index] == item.objectId) {
-          FIO.value       = `${item.lastname} ${item.firstname} ${item.patronymic}`
-          LESSON.value    = item.typeofteacher
-          AGE.value       = item.age
-          ROOM.value      = item.room
-          TEL.value       = item.phonenumber
-          WAPP.value      = item.whatsnum
-          EMAIL.value     = item.email
+          FIO.value = `${item.lastname} ${item.firstname} ${item.patronymic}`
+          LESSON.value = item.typeofteacher
+          AGE.value = item.age
+          ROOM.value = item.room
+          TEL.value = item.phonenumber
+          WAPP.value = item.whatsnum
+          EMAIL.value = item.email
           AVATAR.setAttribute('src', item.photo.url)
         }
       })
@@ -177,15 +177,15 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
       if (item.objectId == e.target.parentElement.parentElement.parentElement.parentElement.id) {
         API.put('https://parseapi.back4app.com/classes/teachers', item.objectId,
           JSON.stringify({
-            "firstname"     : changeFirstName.value != '' ? changeFirstName.value : item.firstname,
-            "lastname"      : changeLastName.value != '' ? changeLastName.value : item.lastname,
-            "patronymic"    : changePatronymic.value != '' ? changePatronymic.value : item.patronymic,
-            "age"           : createAge.value < 0 ? confirm('Ошибка ввода в поле "Возраст"!') : createAge.value != '' ? createAge.value : item.age,
-            "email"         : changeEmail.value != '' ? changeEmail.value : item.email,
-            "typeofteacher" : changeLesson.value != '' ? changeLesson.value : item.typeofteacher,
-            "room"          : createRoom.value < 0 ? confirm('Ошибка ввода в поле "Кабинет"!') : createRoom.value != '' ? createRoom.value : item.room,
-            "phonenumber"   : changeTel.value != '' ? changeTel.value : item.phonenumber,
-            "whatsnum"      : changeWAppNumber.value != '' ? changeWAppNumber.value : item.whatsnum
+            "firstname": changeFirstName.value != '' ? changeFirstName.value : item.firstname,
+            "lastname": changeLastName.value != '' ? changeLastName.value : item.lastname,
+            "patronymic": changePatronymic.value != '' ? changePatronymic.value : item.patronymic,
+            "age": createAge.value < 0 ? confirm('Ошибка ввода в поле "Возраст"!') : createAge.value != '' ? createAge.value : item.age,
+            "email": changeEmail.value != '' ? changeEmail.value : item.email,
+            "typeofteacher": changeLesson.value != '' ? changeLesson.value : item.typeofteacher,
+            "room": createRoom.value < 0 ? confirm('Ошибка ввода в поле "Кабинет"!') : createRoom.value != '' ? createRoom.value : item.room,
+            "phonenumber": changeTel.value != '' ? changeTel.value : item.phonenumber,
+            "whatsnum": changeWAppNumber.value != '' ? changeWAppNumber.value : item.whatsnum
 
             // "photo"         : new FormData(changeAvatar.parentElement)
             // "photo": { "__type": "File", "name": changeAvatar.split(' ').join(' ') }
@@ -217,44 +217,45 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
 
 
 // MODAL WINDOW CREATE INPUTS
-const createLastName    = document.querySelector('#createLastName')
-const createFirstName   = document.querySelector('#createFirstName')
-const createPatronymic  = document.querySelector('#createPatronymic')
-const createLesson      = document.querySelector('#createLesson')
-const createAge         = document.querySelector('#createAge')
-const createRoom        = document.querySelector('#createRoom')
-const createTel         = document.querySelector('#createTel')
-const createWAppNumber  = document.querySelector('#createWAppNumber')
-const createEmail       = document.querySelector('#createEmail')
-const createBtn         = document.querySelector('#create')
+const createLastName = document.querySelector('#createLastName')
+const createFirstName = document.querySelector('#createFirstName')
+const createPatronymic = document.querySelector('#createPatronymic')
+const createLesson = document.querySelector('#createLesson')
+const createAge = document.querySelector('#createAge')
+const createRoom = document.querySelector('#createRoom')
+const createTel = document.querySelector('#createTel')
+const createWAppNumber = document.querySelector('#createWAppNumber')
+const createEmail = document.querySelector('#createEmail')
+const createBtn = document.querySelector('#create')
 // const createAvatar   = document.querySelector('#createAvatar')
 
 // MODAL WINDOW CREATE INPUTS
 
 
-// API POST
+// API POST TEACHERS
 createBtn.addEventListener('click', () => {
   API.post('https://parseapi.back4app.com/classes/teachers',
     JSON.stringify({
-      "firstname"     : createFirstName.value != '' ? createFirstName.value : ' ',
-      "lastname"      : createLastName.value != '' ? createLastName.value : ' ',
-      "patronymic"    : createPatronymic.value != '' ? createPatronymic.value : ' ',
-      "age"           : createAge.value < 0 ? confirm('Ошибка ввода в поле "Возраст"!') : createAge.value != '' ? createAge.value : ' ',
-      "room"          : createRoom.value < 0 ? confirm('Ошибка ввода в поле "Кабинет"!') : createRoom.value != '' ? createRoom.value : ' ',
-      "phonenumber"   : createTel.value != '' ? createTel.value : ' ',
-      "whatsnum"      : createWAppNumber.value != '' ? createWAppNumber.value : ' ',
-      "typeofteacher" : createLesson.value != '' ? createLesson.value : ' ',
-      "email"         : createEmail.value != '' ? createEmail.value : ' '
+      "firstname": createFirstName.value != '' ? createFirstName.value : ' ',
+      "lastname": createLastName.value != '' ? createLastName.value : ' ',
+      "patronymic": createPatronymic.value != '' ? createPatronymic.value : ' ',
+      "age": createAge.value < 0 ? confirm('Ошибка ввода в поле "Возраст"!') : createAge.value != '' ? createAge.value : ' ',
+      "room": createRoom.value < 0 ? confirm('Ошибка ввода в поле "Кабинет"!') : createRoom.value != '' ? createRoom.value : ' ',
+      "phonenumber": createTel.value != '' ? createTel.value : ' ',
+      "whatsnum": createWAppNumber.value != '' ? createWAppNumber.value : ' ',
+      "typeofteacher": createLesson.value != '' ? createLesson.value : ' ',
+      "email": createEmail.value != '' ? createEmail.value : ' '
     })
   )
+  confirm('Добавлено!')
   window.location.reload()
 })
-// API POST
+// API POST TEACHERS
 
 
 // NEWS
-let newsCard      = ''
-let newsBlockRow  = document.querySelector('#newsBlockRow')
+let newsCard = ''
+let newsBlockRow = document.querySelector('#newsBlockRow')
 {/* <button class="btn btn-primary" data-target="#newsModalBtn" data-toggle="modal">Новость</button> */ }
 
 // READ NEWS
@@ -274,11 +275,11 @@ function cardTemplateNews(title, body, date) {
 }
 
 
-let changeNewsTitle   = document.querySelector('#changeNewsTitle')
+let changeNewsTitle = document.querySelector('#changeNewsTitle')
 let changeNewsPlchldr = document.querySelector('#changeNewsPlchldr')
 API.get('https://parseapi.back4app.com/classes/news', res => {
-  let newsModal         = document.querySelector('#newsModal')
-  let idArray           = []
+  let newsModal = document.querySelector('#newsModal')
+  let idArray = []
 
   res.forEach((item) => {
     idArray.unshift(item.objectId)
@@ -293,15 +294,15 @@ API.get('https://parseapi.back4app.com/classes/news', res => {
     btn.setAttribute('data-target', `#${idArray[index]}`)
     btn.setAttribute('data-toggle', 'modal')
     btn.addEventListener('click', () => {
-      newsModal.id  = idArray[index]
+      newsModal.id = idArray[index]
 
-      let TITLE     = changeNewsTitle.previousElementSibling
-      let TEXTAREA  = changeNewsPlchldr.previousElementSibling
+      let TITLE = changeNewsTitle.previousElementSibling
+      let TEXTAREA = changeNewsPlchldr.previousElementSibling
 
       res.forEach(item => {
         if (idArray[index] == item.objectId) {
-          TITLE.value       = item.title
-          TEXTAREA.value    = item.body
+          TITLE.value = item.title
+          TEXTAREA.value = item.body
         }
       })
     })
@@ -312,18 +313,19 @@ API.get('https://parseapi.back4app.com/classes/news', res => {
 
 // UPDATE NEWS
 let updateNews = document.querySelector('#updateNews')
-let newsModal  = document.querySelector('#newsModal')
+let newsModal = document.querySelector('#newsModal')
 API.get('https://parseapi.back4app.com/classes/news', res => {
   res.forEach(item => {
     updateNews.addEventListener('click', () => {
       if (item.objectId == newsModal.id) {
         API.put('https://parseapi.back4app.com/classes/news', item.objectId,
           JSON.stringify({
-            "title" : changeNewsTitle.value != '' ? changeNewsTitle.value : item.title,
-            "body"  : changeNewsPlchldr.value != '' ? changeNewsPlchldr.value : item.body
+            "title": changeNewsTitle.value != '' ? changeNewsTitle.value : item.title,
+            "body": changeNewsPlchldr.value != '' ? changeNewsPlchldr.value : item.body
           })
         )
-        // window.location.reload()
+        confirm('Обновлено!')
+        window.location.reload()
       }
     })
   })
@@ -341,7 +343,6 @@ API.get('https://parseapi.back4app.com/classes/news', res => {
       if (warn == "УДАЛИТЬ") {
         console.log(res[index].objectId);
         API.delete('https://parseapi.back4app.com/classes/news', res[index].objectId)
-        // e.target.parentElement.parentElement.parentElement.parentElement.remove()
         confirm('Удалено!')
         window.location.reload()
       } else { confirm('Отменено!') }
@@ -353,13 +354,17 @@ API.get('https://parseapi.back4app.com/classes/news', res => {
 
 // API CREATE NEWS
 let createNews = document.querySelector('#createNews')
+let createNewsTitle = document.querySelector('#createNewsTitle')
+let createNewsPlchldr = document.querySelector('#createNewsPlchldr')
+
 createNews.addEventListener('click', () => {
   API.post('https://parseapi.back4app.com/classes/news',
     JSON.stringify({
-      "title"     : changeNewsTitle.value != '' ? changeNewsTitle.value : ' ',
-      "body"      : changeNewsPlchldr.value != '' ? changeNewsPlchldr.value : ' '
+      "title": createNewsTitle.value != '' ? createNewsTitle.value : ' ',
+      "body": createNewsPlchldr.value != '' ? createNewsPlchldr.value : ' '
     })
   )
+  confirm('Добавлено!')
   window.location.reload()
 })
 // API CREATE NEWS
