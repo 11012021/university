@@ -155,10 +155,10 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
         if (objId[index] == item.objectId) {
           FIO.value = `${item.lastname} ${item.firstname} ${item.patronymic}`
           LESSON.value = item.typeofteacher
-          AGE.value = item.age
-          ROOM.value = item.room
-          TEL.value = item.phonenumber
-          WAPP.value = item.whatsnum
+          AGE.value   = item.age
+          ROOM.value  = item.room
+          TEL.value   = item.phonenumber0
+          WAPP.value  = item.whatsnum
           EMAIL.value = item.email
           AVATAR.setAttribute('src', item.photo.url)
         }
@@ -180,10 +180,10 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
             "firstname": changeFirstName.value != '' ? changeFirstName.value : item.firstname,
             "lastname": changeLastName.value != '' ? changeLastName.value : item.lastname,
             "patronymic": changePatronymic.value != '' ? changePatronymic.value : item.patronymic,
-            "age": createAge.value < 0 ? confirm('Ошибка ввода в поле "Возраст"!') : createAge.value != '' ? createAge.value : item.age,
+            "age": changeAge.value < 0 ? confirm('Ошибка ввода в поле "Возраст"!') : changeAge.value != '' ? +changeAge.value : item.age,
             "email": changeEmail.value != '' ? changeEmail.value : item.email,
             "typeofteacher": changeLesson.value != '' ? changeLesson.value : item.typeofteacher,
-            "room": createRoom.value < 0 ? confirm('Ошибка ввода в поле "Кабинет"!') : createRoom.value != '' ? createRoom.value : item.room,
+            "room": changeRoom.value < 0 ? confirm('Ошибка ввода в поле "Кабинет"!') : changeRoom.value != '' ? +changeRoom.value : item.room,
             "phonenumber": changeTel.value != '' ? changeTel.value : item.phonenumber,
             "whatsnum": changeWAppNumber.value != '' ? changeWAppNumber.value : item.whatsnum
 
@@ -191,7 +191,7 @@ API.get('https://parseapi.back4app.com/classes/teachers', res => {
             // "photo": { "__type": "File", "name": changeAvatar.split(' ').join(' ') }
           })
         )
-        window.location.reload()
+        setTimeout(() => { window.location.reload() }, 500)
       }
     })
   })
@@ -228,7 +228,6 @@ const createWAppNumber = document.querySelector('#createWAppNumber')
 const createEmail = document.querySelector('#createEmail')
 const createBtn = document.querySelector('#create')
 // const createAvatar   = document.querySelector('#createAvatar')
-
 // MODAL WINDOW CREATE INPUTS
 
 
@@ -239,16 +238,15 @@ createBtn.addEventListener('click', () => {
       "firstname": createFirstName.value != '' ? createFirstName.value : ' ',
       "lastname": createLastName.value != '' ? createLastName.value : ' ',
       "patronymic": createPatronymic.value != '' ? createPatronymic.value : ' ',
-      "age": createAge.value < 0 ? confirm('Ошибка ввода в поле "Возраст"!') : createAge.value != '' ? createAge.value : ' ',
-      "room": createRoom.value < 0 ? confirm('Ошибка ввода в поле "Кабинет"!') : createRoom.value != '' ? createRoom.value : ' ',
+      "age": createAge.value < 0 ? confirm('Ошибка ввода в поле "Возраст"!') : createAge.value != '' ? +createAge.value : 0,
+      "room": createRoom.value < 0 ? confirm('Ошибка ввода в поле "Кабинет"!') : createRoom.value != '' ? +createRoom.value : 0,
       "phonenumber": createTel.value != '' ? createTel.value : ' ',
       "whatsnum": createWAppNumber.value != '' ? createWAppNumber.value : ' ',
       "typeofteacher": createLesson.value != '' ? createLesson.value : ' ',
       "email": createEmail.value != '' ? createEmail.value : ' '
     })
   )
-  confirm('Добавлено!')
-  window.location.reload()
+  setTimeout(() => { window.location.reload() }, 500)
 })
 // API POST TEACHERS
 
@@ -256,7 +254,6 @@ createBtn.addEventListener('click', () => {
 // NEWS
 let newsCard = ''
 let newsBlockRow = document.querySelector('#newsBlockRow')
-{/* <button class="btn btn-primary" data-target="#newsModalBtn" data-toggle="modal">Новость</button> */ }
 
 // READ NEWS
 function cardTemplateNews(title, body, date) {
@@ -324,8 +321,7 @@ API.get('https://parseapi.back4app.com/classes/news', res => {
             "body": changeNewsPlchldr.value != '' ? changeNewsPlchldr.value : item.body
           })
         )
-        confirm('Обновлено!')
-        window.location.reload()
+        setTimeout(() => { window.location.reload() }, 500)
       }
     })
   })
@@ -335,18 +331,22 @@ API.get('https://parseapi.back4app.com/classes/news', res => {
 
 // API DELETE NEWS
 API.get('https://parseapi.back4app.com/classes/news', res => {
-  let delNews = document.querySelectorAll('#delNews');
-  delNews.forEach((btn, index) => {
-    btn.addEventListener('click', e => {
-      console.log(e.target);
-      let warn = prompt('Ввеите "УДАЛИТЬ" для подтверждения действия!')
-      if (warn == "УДАЛИТЬ") {
-        console.log(res[index].objectId);
-        API.delete('https://parseapi.back4app.com/classes/news', res[index].objectId)
-        confirm('Удалено!')
-        window.location.reload()
-      } else { confirm('Отменено!') }
+  let delNews = document.querySelector('#delNews');
+  let newsModalBtn = document.querySelectorAll('#newsModalBtn')
+  let thisId = ''
+
+  newsModalBtn.forEach(btn => {
+    btn.addEventListener('click', e1 => {
+      thisId = e1.target.getAttribute('data-target').slice(1,);
     })
+  })
+  delNews.addEventListener('click', e2 => {
+    let warn = prompt('Ввеите "УДАЛИТЬ" для подтверждения действия!')
+    if (warn == "УДАЛИТЬ") {
+      API.delete('https://parseapi.back4app.com/classes/news', thisId)
+      confirm('Удалено!')
+      setTimeout(() => { window.location.reload() }, 500)
+    } else { confirm('Отменено!') }
   })
 })
 // API DELETE NEWS
@@ -364,7 +364,6 @@ createNews.addEventListener('click', () => {
       "body": createNewsPlchldr.value != '' ? createNewsPlchldr.value : ' '
     })
   )
-  confirm('Добавлено!')
-  window.location.reload()
+  setTimeout(() => { window.location.reload() }, 500)
 })
 // API CREATE NEWS
