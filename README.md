@@ -1,5 +1,5 @@
 # This is the Osh kuu university website
 
-oshkuu.netlify.app -- main page 
+https://oshkuu.netlify.app/ -- main page 
 
-oshkuu.netlify.app/admin/dashboard.html -- admin panel
+https://oshkuu.netlify.app/admin/dashboard.html -- admin panel
